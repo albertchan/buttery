@@ -1,0 +1,72 @@
+{
+  "name": "buttery",
+  "version": "0.0.1",
+  "description": "An opinionated web app stack using hapi, Node.js, and React.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev gulp",
+    "run": "node server.js",
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/albertchan/buttery.git"
+  },
+  "keywords": [
+    "flux",
+    "hapi",
+    "node",
+    "nodejs",
+    "react"
+  ],
+  "author": "Albert Chan",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/albertchan/buttery/issues"
+  },
+  "homepage": "https://github.com/albertchan/buttery#readme",
+  "dependencies": {
+    "blankie": "^1.1.1",
+    "bluebird": "^2.10.2",
+    "bole": "~2.0.0",
+    "browserify": "~11.x.x",
+    "classnames": "~2.x.x",
+    "dotenv": "^1.2.0",
+    "flux": "^2.1.1",
+    "hapi": "^11.x.x",
+    "hapi-views-react": "~0.1.0",
+    "i18next-client": "~1.10.2",
+    "inert": "^3.1.0",
+    "joi": "^6.x.x",
+    "keymirror": "~0.x.x",
+    "lodash": "~3.x.x",
+    "object-assign": "~4.x.x",
+    "pg": "^4.x.x",
+    "pg-hstore": "^2.x.x",
+    "qs": "^5.2.0",
+    "react": "^0.14.x",
+    "react-dom": "^0.14.x",
+    "sequelize": "^3.x.x",
+    "vision": "^3.x.x"
+  },
+  "devDependencies": {
+    "babelify": "~6.x.x",
+    "bootstrap-sass": "~3.x.x",
+    "gulp": "~3.x.x",
+    "gulp-if": "~1.x.x",
+    "gulp-load-plugins": "~1.x.x",
+    "gulp-minify-css": "~1.x.x",
+    "gulp-notify": "~2.x.x",
+    "gulp-plumber": "~1.x.x",
+    "gulp-rename": "~1.x.x",
+    "gulp-sass": "~2.x.x",
+    "gulp-sourcemaps": "~1.x.x",
+    "gulp-uglify": "~1.x.x",
+    "minimist": "~1.x.x",
+    "nodemon": "~1.x.x",
+    "require-dir": "~0.3.x",
+    "vinyl-buffer": "~1.x.x",
+    "vinyl-source-stream": "~1.x.x"
+  }
+}

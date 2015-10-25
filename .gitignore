@@ -1,0 +1,8 @@
+node_modules/
+public/
+.DS_Store
+.env
+.env.dev
+.idea
+npm-debug.log
+*.swp
