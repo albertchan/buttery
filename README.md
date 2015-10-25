@@ -34,7 +34,7 @@ Then install the project's dependencies:
 
 ```bash
 $ git clone git@github.com:albertchan/buttery
-
+```
 
 ## Running the app
 
