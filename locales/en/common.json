@@ -1,0 +1,16 @@
+{
+    "menu": [
+        {"id": "home", "name": "Home"},
+        {"id": "cinema", "name": "Cinemas"},
+        {"id": "movie", "name": "Movies"},
+        {"id": "showing", "name": "In Theaters"},
+        {"id": "upcoming", "name": "Coming Soon"}
+    ],
+    "location": {
+        "region": [
+            {"name": "Hong Kong", "abbr": "HK"},
+            {"name": "Kowloon", "abbr": "KLW"},
+            {"name": "New Territories", "abbr": "NT"}
+        ]
+    }
+}

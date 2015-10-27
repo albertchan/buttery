@@ -3,6 +3,13 @@ var React = require('react');
 var Default = React.createClass({
 
     render: function() {
+        var app = '/js/app.js',
+            vendors = '/js/vendors.js';
+
+        if (process.env.NODE_ENV === 'production') {
+            vendors = '/js/vendors.min.js';
+        }
+
         return (
             <html>
                 <head>
@@ -14,6 +21,7 @@ var Default = React.createClass({
                 </head>
                 <body>
                     {this.props.children}
+                    <script src={vendors}></script>
                     <script src="/js/app.js"></script>
                 </body>
             </html>

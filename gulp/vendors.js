@@ -13,7 +13,6 @@ var RELEASE = config.release;
 var vendors = [
     { require: 'classnames', expose: 'classnames' },
     { require: 'flux', expose: 'flux' },
-    { require: 'i18next-client', expose: 'i18next-client' },
     { require: 'keymirror', expose: 'keymirror' },
     { require: 'object-assign', expose: 'object-assign' },
     { require: 'react', expose: 'react' },

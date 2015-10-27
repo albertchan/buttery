@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/albertchan/buttery#readme",
   "dependencies": {
-    "blankie": "^1.1.1",
     "bluebird": "^2.10.2",
     "bole": "~2.0.0",
     "browserify": "~11.x.x",
@@ -35,8 +34,8 @@
     "dotenv": "^1.2.0",
     "flux": "^2.1.1",
     "hapi": "^11.x.x",
-    "hapi-views-react": "~0.1.0",
-    "i18next-client": "~1.10.2",
+    "hapi-react-views": "~4.x.x",
+    "hapi-i18next": "~2.x.x",
     "inert": "^3.1.0",
     "joi": "^6.x.x",
     "keymirror": "~0.x.x",
@@ -51,7 +50,7 @@
     "vision": "^3.x.x"
   },
   "devDependencies": {
-    "babelify": "~6.x.x",
+    "babel": "~5.x.x",
     "bootstrap-sass": "~3.x.x",
     "gulp": "~3.x.x",
     "gulp-if": "~1.x.x",
