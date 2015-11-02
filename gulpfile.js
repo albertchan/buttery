@@ -7,4 +7,4 @@ requireDir('./gulp');
 
 // client-side Gulp tasks
 gulp.task('default', ['build', 'nodemon', 'watch']);
-gulp.task('build', ['fonts', 'images', 'styles']); // assets.js
+gulp.task('build', ['fonts', 'images', 'locales', 'scripts', 'styles']);

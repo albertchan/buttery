@@ -4,5 +4,8 @@ var gulp   = require('gulp'),
 // Watch task
 gulp.task('watch', ['build'], function() {
     gulp.watch(config.src.fonts, ['fonts']);
+    gulp.watch(config.src.locales, ['locales']);
+    gulp.watch(config.src.common, ['scripts']);
+    gulp.watch(config.src.scripts, ['scripts']);
     gulp.watch(config.src.styles, ['styles']);
 });

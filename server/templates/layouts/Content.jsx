@@ -25,7 +25,7 @@ var Default = React.createClass({
                     <link rel="stylesheet" href="/css/app.css" />
                 </head>
                 <body>
-                    <div id="app">{this.props.children}</div>
+                    <div id="content">{this.props.children}</div>
                     <script src={vendors}></script>
                     <script src="/js/app.js"></script>
                 </body>

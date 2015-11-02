@@ -7,7 +7,7 @@ var argv       = require('minimist')(process.argv.slice(2)),
 
 
 // settings
-var RELEASE = config,release;
+var RELEASE = config.release;
 //var RELEASE = !!argv.release;
 
 // Fonts task
@@ -24,7 +24,7 @@ gulp.task('images', function() {
 
 // Styles taks
 gulp.task('styles', function() {
-    return gulp.src(config.src.styles + 'app.scss')
+    return gulp.src(config.srcPath.styles + 'app.scss')
         .pipe(plugin.plumber())
         .pipe(plugin.sass().on('error', sass.logError))
         .pipe(plugin.sourcemaps.write('./maps'))

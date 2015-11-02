@@ -1,4 +1,8 @@
 {
+    "app": {
+        "name": "Buttery",
+        "tagline": "Movie information, showtimes, and more!"
+    },
     "menu": [
         {"id": "home", "name": "Home"},
         {"id": "cinema", "name": "Cinemas"},

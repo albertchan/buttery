@@ -1,25 +1,14 @@
 var React = require('react'),
     Default =require('./layouts/Default.jsx'),
-    Menu = require('../../common/components/Menu.jsx'),
-    ReactPropTypes = React.PropTypes;
+    Menu = require('../../common/components/Menu.jsx');
 
 
-var Home = React.createClass({
-
-    propTypes: {
-        title: ReactPropTypes.string
-    },
+var Cinema = React.createClass({
 
     getInitialState: function() {
         return {
-            locale: 'en'
-        };
-    },
 
-    changeLanguage: function(lng) {
-        this.setState({
-            locale: lng
-        });
+        };
     },
 
     render: function() {
@@ -28,13 +17,16 @@ var Home = React.createClass({
 
         return (
             <Default title={title}>
-                <h1>Buttery</h1>
+                <h1>{title}</h1>
                 <p className="subheading">Movie information, show times and more.</p>
                 <Menu items={menuArray} />
+                <div className="content">
+                    <h2>Cinemas</h2>
+                </div>
             </Default>
         );
     }
 
 });
 
-module.exports = Home;
+module.exports = Cinema;
