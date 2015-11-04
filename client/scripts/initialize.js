@@ -1,28 +1,31 @@
 import React from 'react';
 import { render } from 'react-dom';
+// import { Router, Route, History } from 'react-router';
+import { Route } from 'react-router';
+import { combineReducers, compose, createStore, } from 'redux';
+import { Provider } from 'react-redux';
+import { ReduxRouter, reduxReactRouter, routerStateReducer } from 'redux-router';
 import { createHistory } from 'history';
-import { Router, Route, History } from 'react-router';
 import i18n from 'i18next-client';
 
 import App from './components/App';
-import Cinema from './routes/Cinema';
+import * as pages from './components/pages';
 
 
-// session history in browsers
-const history = createHistory();
+// page components
+const {
+    Cinema,
+    Movie
+} = pages;
 
-// recursive directory loop
-const rootRoute = {
-    component: 'div',
-    childRoutes: [{
-        path: '/',
-        component: require('./components/App'),
-        childRoutes: [
-            require('./routes/Cinema'),
-            require('./routes/Movie')
-        ]
-    }]
-};
+// redux-router magic
+const reducer = combineReducers({
+    router: routerStateReducer
+});
+
+const store = compose(
+    reduxReactRouter({ createHistory })
+)(createStore)(reducer);
 
 if (typeof window !== 'undefined') {
 
@@ -41,9 +44,9 @@ if (typeof window !== 'undefined') {
         // localStorageExpirationTime: 86400000 // in ms, default 1 week
     }, function(err, t) {
 
-        if (typeof history.setup === "function") {
-            history.setup();
-        }
+        // if (typeof history.setup === "function") {
+        //     history.setup();
+        // }
 
         render(
             // <Router history={history}>
@@ -51,7 +54,16 @@ if (typeof window !== 'undefined') {
             //         <Route path="cinema" component={Cinema} />
             //     </Route>
             // </Router>,
-            <Router history={history} routes={rootRoute} />,
+            // <Router history={history} routes={rootRoute} />,
+
+            <Provider store={store}>
+                <ReduxRouter>
+                    <Route path="/" component={App}>
+                        <Route path="cinema" component={Cinema} />
+                        <Route path="movie" component={Movie} />
+                    </Route>
+                </ReduxRouter>
+            </Provider>,
             document.getElementById('app')
         );
 

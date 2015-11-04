@@ -6,6 +6,9 @@ export default class Cinema extends React.Component {
         return (
             <div>
                 <h2>Cinemas</h2>
+                <ul>
+                    
+                </ul>
             </div>
         );
     }

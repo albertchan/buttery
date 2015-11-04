@@ -9,7 +9,7 @@ module.exports = {
         scripts: ['./client/scripts/**/*'],
         styles:  ['./client/styles/**/*'],
         common:  ['./common/components/**/*'],
-        locales: ['./locales/**/*']
+        locales: ['./locales/**/*.json']
     },
     srcPath: {
         styles: ['./client/styles/']

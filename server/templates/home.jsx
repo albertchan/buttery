@@ -29,7 +29,7 @@ var Home = React.createClass({
         return (
             <Default title={title}>
                 <h1>Buttery</h1>
-                <p className="subheading">Movie information, show times and more.</p>
+                <p className="subheading">{this.props.i18n.translateWithCache('app.tagline')}</p>
                 <Menu items={menuArray} />
             </Default>
         );

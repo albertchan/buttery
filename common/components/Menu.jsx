@@ -18,8 +18,6 @@ export default class Menu extends React.Component {
     }
 
     render() {
-        //onClick={this.handleClick.bind(this, i)}>
-
         return (
             <div className="menu-container">
                 <ul className="menu">

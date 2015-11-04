@@ -1,7 +1,7 @@
 {
     "app": {
         "name": "Buttery",
-        "tagline": "Movie information, showtimes, and more!"
+        "tagline": "Movie information, show times, and more!"
     },
     "menu": [
         {"id": "home", "name": "Home"},
