@@ -3,7 +3,7 @@ var models = require('../models');
 
 module.exports = function(request, reply) {
 
-    var context = {};
+    /*var context = {};
 
     models.Cinema.findAll({
         include: [
@@ -21,5 +21,7 @@ module.exports = function(request, reply) {
 
         context.cinema = arrayCinema;
         reply.view('cinema', {context: context});
-    });
+    });*/
+
+    reply.view('cinema');
 };

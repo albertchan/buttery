@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { pushState } from 'redux-router';
 import i18n from 'i18next-client';
 import { resetErrorMessage } from '../actions';
-import Menu from '../../../common/components/Menu.js';
+import Menu from '../../../common/components/Menu';
 
 
 export default class App extends React.Component {

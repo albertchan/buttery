@@ -1,7 +1,7 @@
 var React = require('react'),
     classNames = require('classnames'),
-    Default =require('./layouts/Default.jsx'),
-    Menu = require('../../common/components/Menu.js');
+    Default =require('./layouts/Default'),
+    Menu = require('../../common/components/Menu');
 
 
 var Cinema = React.createClass({
@@ -14,8 +14,7 @@ var Cinema = React.createClass({
 
     render: function() {
         var menuArray = this.props.i18n.translateWithCache('menu', this.state.locale, {returnObjectTrees: true}),
-            title = this.props.i18n.translateWithCache('app.name'),
-            cinemas = this.props.context.cinema;
+            title = this.props.i18n.translateWithCache('app.name');
 
         return (
             <Default title={title}>
@@ -24,20 +23,7 @@ var Cinema = React.createClass({
                 <Menu items={menuArray} />
                 <div className="content">
                     <h2>Cinemas</h2>
-                    <ul>
-                        {cinemas.map(function(item, i) {
-                            var link = '/cinema/' + item.id;
-
-                            return (
-                                <li key={i}
-                                    className={classNames('list-item')}>
-                                    <a href={link}>
-                                        <span>{item.name}</span>
-                                    </a>
-                                </li>
-                            );
-                        }, this)}
-                    </ul>
+                    <div>Loading...</div>
                 </div>
             </Default>
         );

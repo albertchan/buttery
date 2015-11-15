@@ -12,7 +12,6 @@ var RELEASE = config.release;
 // vendor dependencies
 var vendors = [
     { require: 'classnames', expose: 'classnames' },
-    { require: 'flux', expose: 'flux' },
     { require: 'keymirror', expose: 'keymirror' },
     { require: 'object-assign', expose: 'object-assign' },
     { require: 'react', expose: 'react' },

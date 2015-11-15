@@ -19,21 +19,23 @@ class Cinema extends Component {
         return (
             <div>
                 <h2>Cinemas</h2>
-                <Cinemas items={cinemas} />
+                {isFetching &&
+                    <div>Loading...</div>
+                }
+                {!isFetching && cinemas && cinemas.length > 0 &&
+                    <Cinemas items={cinemas} />
+                }
             </div>
         );
     }
 }
 
 Cinema.propTypes = {
-    //cinemas: PropTypes.array.isRequired,
-    //isFetching: PropTypes.bool.isRequired,
     fetchCinemasIfNeeded: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
     const { loadCinemas } = state;
-    //console.log(state);
     const {
         isFetching,
         items: cinemas

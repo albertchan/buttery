@@ -16,7 +16,7 @@ export default class Cinemas extends React.Component {
     }
 
     render() {
-        const items = this.props.items !== undefined ? this.props.items : [];s
+        const items = this.props.items !== undefined ? this.props.items : [];
 
         return (
             <ul className="list-group">
