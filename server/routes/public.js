@@ -30,6 +30,10 @@ var publicRoutes = [
         path: '/cinema',
         method: 'GET',
         handler: require('../handlers/cinema')
+    }, {
+        path: '/api/cinema',
+        method: 'GET',
+        handler: require('../handlers/getCinema')
     }
 
 ];

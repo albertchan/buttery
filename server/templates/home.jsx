@@ -1,6 +1,6 @@
 var React = require('react'),
     Default =require('./layouts/Default.jsx'),
-    Menu = require('../../common/components/Menu.jsx'),
+    Menu = require('../../common/components/Menu.js'),
     ReactPropTypes = React.PropTypes;
 
 

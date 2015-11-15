@@ -1,9 +1,7 @@
-var models = require('../models');
+import * as models from '../models';
 
 
 module.exports = function(request, reply) {
-
-    var context = {};
 
     models.Cinema.findAll({
         include: [
@@ -19,7 +17,6 @@ module.exports = function(request, reply) {
             });
         });
 
-        context.cinema = arrayCinema;
-        reply.view('cinema', {context: context});
+        reply({data: arrayCinema});
     });
 };

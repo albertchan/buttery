@@ -1,7 +1,7 @@
 var React = require('react'),
     classNames = require('classnames'),
     Default =require('./layouts/Default.jsx'),
-    Menu = require('../../common/components/Menu.jsx');
+    Menu = require('../../common/components/Menu.js');
 
 
 var Cinema = React.createClass({
