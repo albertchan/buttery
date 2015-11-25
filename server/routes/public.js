@@ -20,18 +20,16 @@ var publicRoutes = [
             return reply.redirect('/').code(301);
         }
     }, {
-        // redirect plural to singular
         path: '/cinemas',
         method: 'GET',
-        handler: function(request, reply) {
-            return reply.redirect('/cinema').code(301);
-        }
+        handler: require('../handlers/cinemas')
     }, {
-        path: '/cinema',
+        path: '/cinema/{cinemaId}',
         method: 'GET',
-        handler: require('../handlers/cinema')
+        handler: require('../handlers/cinemas')
+        // handler: require('../handlers/showCinema')
     }, {
-        path: '/api/cinema',
+        path: '/api/cinema/{cinemaId?}',
         method: 'GET',
         handler: require('../handlers/getCinema')
     }

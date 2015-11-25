@@ -4,7 +4,7 @@ var React = require('react'),
     Menu = require('../../common/components/Menu');
 
 
-var Cinema = React.createClass({
+var Cinemas = React.createClass({
 
     getInitialState: function() {
         return {
@@ -18,8 +18,11 @@ var Cinema = React.createClass({
 
         return (
             <Default title={title}>
+                <h1>{title}</h1>
+                <p className="subheading">{this.props.i18n.translateWithCache('app.tagline')}</p>
                 <Menu items={menuArray} />
                 <div className="content">
+                    <h2>Cinemas</h2>
                     <div>Loading...</div>
                 </div>
             </Default>
@@ -28,4 +31,4 @@ var Cinema = React.createClass({
 
 });
 
-module.exports = Cinema;
+module.exports = Cinemas;

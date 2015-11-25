@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { ReduxRouter, reduxReactRouter, routerStateReducer } from 'redux-router';
 import { createHistory } from 'history';
 import i18n from 'i18next-client';
+import * as path from 'path';
 
 import Root from './components/Root';
 // import App from './components/App';
@@ -33,6 +34,7 @@ const store = configureStore();
 if (typeof window !== 'undefined') {
 
     // i18next is async, bootstrap React on callback
+    i18n.sync.resStore = {};
     i18n.init({
         lng: 'en',
         fallbackLng: 'en',
@@ -40,7 +42,9 @@ if (typeof window !== 'undefined') {
             namespaces: ['common'],
             defaultNs: 'common'
         },
-        resSetPath: './locales/__lng__/__ns__.json',
+        // resGetPath: path.join(__dirname, 'locales/__lng__/__ns__.json'),
+        resGetPath: path.join('/', 'locales/__lng__/__ns__.json'),
+        // resSetPath: 'locales/__lng__/__ns__.json',
         supportedLngs: ['en', 'zh-HK'],
         preload: ['en', 'zh-HK']
         // useLocalStorage: true,

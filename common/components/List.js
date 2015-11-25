@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import classNames from 'classnames';
 
 
-export default class Cinemas extends React.Component {
+export default class List extends React.Component {
 
     constructor(props) {
         super(props);
@@ -41,4 +41,4 @@ export default class Cinemas extends React.Component {
 
 }
 
-Cinemas.propTypes = { items: React.PropTypes.array };
+List.propTypes = { items: React.PropTypes.array };

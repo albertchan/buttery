@@ -5,7 +5,7 @@
     },
     "menu": [
         {"id": "home", "name": "首頁"},
-        {"id": "cinema", "name": "戲院"},
+        {"id": "cinemas", "name": "戲院"},
         {"id": "movie", "name": "電影"},
         {"id": "showing", "name": "即日上映"},
         {"id": "upcoming", "name": "不日上映"}

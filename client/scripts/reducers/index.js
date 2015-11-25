@@ -1,6 +1,9 @@
 import { combineReducers } from 'redux';
 import { routerStateReducer as router } from 'redux-router';
-import { 
+import {
+    INVALIDATE_CINEMA,
+    REQUEST_CINEMA,
+    RECEIVE_CINEMA,
     INVALIDATE_CINEMAS,
     REQUEST_CINEMAS,
     RECEIVE_CINEMAS,
@@ -25,11 +28,19 @@ function cinemas(state = {
                 didInvalidate: false
             });
         case RECEIVE_CINEMAS:
-            return Object.assign({}, state, {
-                isFetching: false,
-                didInvalidate: false,
-                items: action.cinemas
-            });
+            if (action.id) {
+                return Object.assign({}, state, {
+                    isFetching: false,
+                    didInvalidate: false,
+                    item: action.cinema
+                });
+            } else {
+                return Object.assign({}, state, {
+                    isFetching: false,
+                    didInvalidate: false,
+                    items: action.cinemas
+                });
+            }
         default:
             return state;
     }

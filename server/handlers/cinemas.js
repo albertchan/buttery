@@ -1,4 +1,4 @@
-var models = require('../models');
+// import * as models from '../models';
 
 
 module.exports = function(request, reply) {
@@ -23,5 +23,5 @@ module.exports = function(request, reply) {
         reply.view('cinema', {context: context});
     });*/
 
-    reply.view('cinema');
+    reply.view('cinemas');
 };

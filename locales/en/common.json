@@ -5,7 +5,7 @@
     },
     "menu": [
         {"id": "home", "name": "Home"},
-        {"id": "cinema", "name": "Cinemas"},
+        {"id": "cinemas", "name": "Cinemas"},
         {"id": "movie", "name": "Movies"},
         {"id": "showing", "name": "In Theaters"},
         {"id": "upcoming", "name": "Coming Soon"}
