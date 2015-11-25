@@ -1,24 +1,23 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-    var Chain = sequelize.define("Chain", {
+    var Actor = sequelize.define("Actor", {
         id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true, allowNull: false},
         en_us: DataTypes.STRING,
         zh_cn: DataTypes.STRING,
-        zh_hk: DataTypes.STRING,
-        website_url: DataTypes.STRING
+        zh_hk: DataTypes.STRING
     }, {
         classMethods: {
             associate: function(models) {
-                Chain.hasMany(models.Cinema);
+                Actor.belongsToMany(models.Movie, {through: 'movie_actors'})
             }
         },
-        tableName: 'cinema_chains',
+        tableName: 'actors',
         createdAt: false,
         deletedAt: false,
         updatedAt: false,
         underscored: true
     });
 
-    return Chain;
+    return Actor;
 };

@@ -1,24 +1,23 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-    var Chain = sequelize.define("Chain", {
-        id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true, allowNull: false},
+    var Language = sequelize.define("Language", {
+        id: {type: DataTypes.STRING(3), allowNull: false, primaryKey: true, unique: true},
         en_us: DataTypes.STRING,
         zh_cn: DataTypes.STRING,
-        zh_hk: DataTypes.STRING,
-        website_url: DataTypes.STRING
+        zh_hk: DataTypes.STRING
     }, {
         classMethods: {
             associate: function(models) {
-                Chain.hasMany(models.Cinema);
+                Language.hasMany(models.Movie)
             }
         },
-        tableName: 'cinema_chains',
+        tableName: 'languages',
         createdAt: false,
         deletedAt: false,
         updatedAt: false,
         underscored: true
     });
 
-    return Chain;
+    return Language;
 };
