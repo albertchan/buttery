@@ -1,3 +1,5 @@
+// var
+$btn-font-family: $font-family-sans;
 // buttons
 .by-btn {
   appearance: none;
@@ -5,4 +7,6 @@
   background-color: transparent;
   line-height: 1;
   padding: 1em;
+  border-width: 0;
+  font-family: $btn-font-family;
 }

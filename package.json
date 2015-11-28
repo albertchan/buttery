@@ -62,6 +62,7 @@
     "babelify": "~6.x.x",
     "bootstrap-sass": "~3.x.x",
     "gulp": "~3.x.x",
+    "gulp-autoprefixer": "^3.1.0",
     "gulp-if": "~1.x.x",
     "gulp-load-plugins": "~1.x.x",
     "gulp-minify-css": "~1.x.x",
