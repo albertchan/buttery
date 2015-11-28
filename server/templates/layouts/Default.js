@@ -25,6 +25,13 @@ var Default = React.createClass({
                     <link rel="stylesheet" href="/css/app.css" />
                 </head>
                 <body>
+                    <header className="by-header cf">
+                        <div className="by-header_right u-float-right">
+                            <span>Filter by:</span> <a href="javascript:;">Right Now</a>
+                            <span>in</span> <a href="javascript:;">Hong Kong</a>
+                        </div>
+                    </header>
+                    <button className="by-btn">Button</button>
                     <div id="app">{this.props.children}</div>
                     <script src={vendors}></script>
                     <script src="/js/app.js"></script>

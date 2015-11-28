@@ -1,0 +1,36 @@
+/*
+
+   CLEARS
+
+*/
+
+/* Nicolas Gallaghers Clearfix solution
+   Ref: http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+.cf:before,
+.cf:after { content: " "; display: table; }
+.cf:after { clear: both; }
+.cf {       *zoom: 1; }
+
+
+.u-float-left { float: left;  display: inline; }
+.u-float-right { float: right; display: inline; }
+.u-float-none { float: none; }
+
+@media #{$breakpoint--not-small} {
+  .u-float-left--ns { float: left; display: inline; }
+  .u-float-right--ns { float: right;display: inline; }
+  .u-float-none--ns { float: none!important; }
+}
+
+@media #{$breakpoint--medium} {
+  .u-float-left--m { float: left; display: inline; }
+  .u-float-right--m { float: right;  display: inline; }
+  .u-float-none--m { float: none; }
+}
+
+@media #{$breakpoint--large} {
+  .u-float-left--l { float: left; display: inline; }
+  .u-float-right--l { float: right;  display: inline; }
+  .u-float-none--l { float: none; }
+}

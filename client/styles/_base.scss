@@ -1,0 +1,19 @@
+// var
+$base--color-bg: $color-black;
+$base--color-text: $color-white;
+
+body {
+  background-color: $base--color-bg;
+  color: $base--color-text;
+}
+
+// main header
+.by-header {
+  font-size: 1em;
+  padding: 1em;
+}
+
+.by-header a {
+  font-weight: 500;
+  text-decoration: none;
+}

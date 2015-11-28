@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/albertchan/buttery.git"
+    "url": "git+ssh://git@github.com/jakechan/buttery.git"
   },
   "keywords": [
     "flux",
@@ -20,12 +20,12 @@
     "nodejs",
     "react"
   ],
-  "author": "Albert Chan",
+  "author": "jake Chan",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/albertchan/buttery/issues"
+    "url": "https://github.com/jakechan/buttery/issues"
   },
-  "homepage": "https://github.com/albertchan/buttery#readme",
+  "homepage": "https://github.com/jakechan/buttery#readme",
   "dependencies": {
     "bluebird": "^2.10.2",
     "bole": "~2.0.0",

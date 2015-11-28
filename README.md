@@ -33,7 +33,7 @@ $ npm install pg -g
 Then install the project's dependencies:
 
 ```bash
-$ git clone git@github.com:albertchan/buttery
+$ git clone git@github.com:jakechan/buttery
 ```
 
 ## Running the app
