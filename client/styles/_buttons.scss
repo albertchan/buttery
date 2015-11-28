@@ -1,12 +1,63 @@
 // var
-$btn-font-family: $font-family-sans;
+$btn--font-family: $font-family-sans;
+$btn--color-primary: $color-buttery;
+$btn--color-secondary: $color-gray;
+
 // buttons
 .by-btn {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
   appearance: none;
   font-size: 1em;
   background-color: transparent;
   line-height: 1;
-  padding: 1em;
+  text-transform: uppercase;
+  padding: 0.75em 1em;
+  margin: 0;
+  vertical-align: middle;
+  height: auto;
   border-width: 0;
-  font-family: $btn-font-family;
+  border-radius: 2px;
+  font-family: $btn--font-family;
+  outline: 0;
+  transition: opacity 0.2s linear;
+  text-align: center;
+  &,
+  &:visited,
+  &:hover {
+    color: $color-white;
+    opacity: 1;
+  }
+}
+
+.by-btn.hover,
+.by-btn:hover {
+  opacity: 0.7;
+}
+
+.by-btn.disabled,
+.by-btn[disabled] {
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
+
+// primary
+.by-btn--primary {
+  background-color: $btn--color-primary;
+  color: $color-black !important; //overwrite links
+}
+.by-btn--primary.focus,
+.by-btn--primary:focus {
+  box-shadow: 0 0 0 2px $color-black, 0 0 0 4px transparentize($btn--color-primary, 0.3);
+}
+.by-btn--primary.active,
+.by-btn--primary:active {
+  box-shadow: inset 0 0 0 1px $color-black
 }

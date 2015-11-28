@@ -45,10 +45,12 @@ body {
 a {
   color: $type--color-text;
   transition: color .2s linear;
+  outline: 0;
 }
 a:visited {
   color: darken($type--color-text, 20%);
 }
+a:focus,
 a:hover {
   color: $type--color-link;
 }

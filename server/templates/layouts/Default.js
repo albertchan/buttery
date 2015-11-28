@@ -31,7 +31,9 @@ var Default = React.createClass({
                             <span>in</span> <a href="javascript:;">Hong Kong</a>
                         </div>
                     </header>
-                    <button className="by-btn">Button</button>
+                    <button className="by-btn by-btn--primary">Primary</button>
+                    <a href="#" className="by-btn by-btn--primary">Primary</a>
+                    <input type="button" className="by-btn by-btn--primary" value="Primary"/>
                     <div id="app">{this.props.children}</div>
                     <script src={vendors}></script>
                     <script src="/js/app.js"></script>
