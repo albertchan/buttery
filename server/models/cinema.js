@@ -11,6 +11,7 @@ module.exports = function(sequelize, DataTypes) {
         address_zh_hk: DataTypes.TEXT,
         cinema_phone: DataTypes.STRING,
         cinema_thumbnail_url: DataTypes.STRING,
+        cinema_data_id: DataTypes.STRING,
         cinema_url: DataTypes.STRING,
         cinema_google_map: DataTypes.TEXT,
         cinema_coord_lat: DataTypes.DECIMAL(10,7),
@@ -19,18 +20,8 @@ module.exports = function(sequelize, DataTypes) {
     }, {
         classMethods: {
             associate: function(models) {
-                Cinema.belongsTo(models.Chain, {
-                    onDelete: "CASCADE",
-                    foreignKey: {
-                        allowNull: false
-                    }
-                });
-                Cinema.belongsTo(models.City, {
-                    onDelete: "CASCADE",
-                    foreignKey: {
-                        allowNull: false
-                    }
-                });
+                Cinema.belongsTo(models.Chain);
+                Cinema.belongsTo(models.City);
             }
         },
         tableName: 'cinemas',
