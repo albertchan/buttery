@@ -9,17 +9,19 @@ $btn--color-secondary: $color-gray;
   text-decoration: none;
   cursor: pointer;
   appearance: none;
-  font-size: 1em;
   background-color: transparent;
   line-height: 1;
   text-transform: uppercase;
-  padding: 0.75em 1em;
+  padding: 1.333em 1.777em;
   margin: 0;
   vertical-align: middle;
   height: auto;
   border-width: 0;
   border-radius: 2px;
   font-family: $btn--font-family;
+  font-size: .75em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   outline: 0;
   transition: opacity 0.2s linear;
   text-align: center;
@@ -59,5 +61,19 @@ $btn--color-secondary: $color-gray;
 }
 .by-btn--primary.active,
 .by-btn--primary:active {
-  box-shadow: inset 0 0 0 1px $color-black
+  box-shadow: inset 0 0 0 1px $color-black;
+}
+
+// secondary
+.by-btn--secondary {
+  background-color: $btn--color-secondary;
+  color: $color-white !important; //overwrite links
+}
+.by-btn--secondary.focus,
+.by-btn--secondary:focus {
+  box-shadow: 0 0 0 2px $color-black, 0 0 0 4px transparentize($btn--color-secondary, 0.3);
+}
+.by-btn--secondary.active,
+.by-btn--secondary:active {
+  box-shadow: inset 0 0 0 1px $color-black;
 }

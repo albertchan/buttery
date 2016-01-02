@@ -1,5 +1,6 @@
 var React = require('react'),
-    ReactPropTypes = React.PropTypes;
+    ReactPropTypes = React.PropTypes,
+    Dropdown = require('../../../common/components/Dropdown.js');
 
 var Default = React.createClass({
 
@@ -26,14 +27,31 @@ var Default = React.createClass({
                 </head>
                 <body>
                     <header className="by-header cf">
-                        <div className="by-header_right u-float-right">
-                            <span>Filter by:</span> <a href="javascript:;">Right Now</a>
-                            <span>in</span> <a href="javascript:;">Hong Kong</a>
+                        <nav className="by-header_left">
+                            <ul className="by-menu by-menu--horizontal">
+                                <li><a href="javascript:;">Movies</a></li>
+                                <li><a href="javascript:;">Cinemas</a></li>
+                            </ul>
+                        </nav>
+                        <div className="by-header_right">
+                            <ul className="by-menu by-menu--horizontal">
+                                <li>
+                                    <Dropdown>
+                                        <a className="by-dropdown_trigger" href="javascript:;">Today</a>
+                                        <div className="by-dropdown_content">
+                                            <ul className="by-menu by-menu--vertical">
+                                                <li><a href="javascript:;">Tomorrow</a></li>
+                                                <li><a href="javascript:;">Tomorrow</a></li>
+                                                <li><a href="javascript:;">Tomorrow</a></li>
+                                                <li><a href="javascript:;">Tomorrow</a></li>
+                                            </ul>
+                                        </div>
+                                    </Dropdown>
+                                </li>
+                                <li><a href="javascript:;">Hong Kong</a></li>
+                            </ul>
                         </div>
                     </header>
-                    <button className="by-btn by-btn--primary">Primary</button>
-                    <a href="#" className="by-btn by-btn--primary">Primary</a>
-                    <input type="button" className="by-btn by-btn--primary" value="Primary"/>
                     <div id="app">{this.props.children}</div>
                     <script src={vendors}></script>
                     <script src="/js/app.js"></script>
