@@ -55,6 +55,7 @@
     "redux-router": "^1.0.0-beta3",
     "redux-thunk": "^1.x.x",
     "sequelize": "^3.x.x",
+    "store": "^1.x.x",
     "vision": "^3.x.x"
   },
   "devDependencies": {
