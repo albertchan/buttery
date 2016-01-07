@@ -35,7 +35,8 @@ body {
     text-decoration: none;
     transition: background-color .2s linear;
   }
-  a:hover {
+  a:hover ,
+  a.active{
     background-color: darken($color-black, 2%);
   }
 }
@@ -52,13 +53,19 @@ body {
 }
 
 // dropdown
+.by-dropdown {
+  position: relative;
+}
 .by-dropdown_content {
   position: relative;
   display: none;
   width: 20rem; //16*20 =320
   background-color: $color-gray;
 }
-.by-dropdown.active .by-dropdown_content {
+.by-dropdown_content.active {
   position: absolute;
   display: block;
+}
+.by-dropdown_content--right {
+  right: 0;
 }
