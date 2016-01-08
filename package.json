@@ -52,7 +52,7 @@
     "react-redux": "^4.x.x",
     "react-router": "^1.0.0-rc3",
     "redux": "^3.x.x",
-    "redux-router": "^1.0.0-beta3",
+    "redux-router": "^1.0.0-beta7",
     "redux-thunk": "^1.x.x",
     "sequelize": "^3.x.x",
     "store": "^1.x.x",
