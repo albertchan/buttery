@@ -7,22 +7,16 @@ import rootReducer from '../reducers';
 import routes from '../routes';
 
 
-// const createStoreWithMiddleware = applyMiddleware(
-//     thunkMiddleware,
-//     createLogger()
-// )(createStore);
-
 // const createStoreWithMiddleware = compose(
 const finalCreateStore = compose(
     applyMiddleware(
-        thunk, // lets us to dispatch() functions
+        thunk, // lets us dispatch() functions
         api
     ),
     reduxReactRouter({ routes, createHistory })
 )(createStore);
 
 export default function configureStore(initialState) {
-    // const store = createStoreWithMiddleware(rootReducer, initialState);
     const store = finalCreateStore(rootReducer, initialState);
 
     return store;

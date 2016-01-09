@@ -1,8 +1,17 @@
 import React, { Component, PropTypes } from 'react';
-import { Provider } from 'react-redux';
-import { ReduxRouter } from 'redux-router';
+import { Route } from 'react-router';
+import { combineReducers, compose, createStore, } from 'redux';
+import { ReduxRouter, reduxReactRouter, routerStateReducer, pushState } from 'redux-router';
+import { Provider, connect } from 'react-redux';
+import { createHistory } from 'history';
+import App from './App';
+
 
 export default class Root extends Component {
+    static propTypes = {
+        store: PropTypes.object.isRequired
+    };
+
     render() {
         const { store } = this.props;
 
@@ -13,7 +22,3 @@ export default class Root extends Component {
         );
     }
 }
-
-Root.propTypes = {
-    store: PropTypes.object.isRequired
-};

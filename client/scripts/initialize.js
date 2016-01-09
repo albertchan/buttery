@@ -1,10 +1,5 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Route } from 'react-router';
-import { combineReducers, compose, createStore, } from 'redux';
-import { Provider } from 'react-redux';
-import { ReduxRouter, reduxReactRouter, routerStateReducer } from 'redux-router';
-import { createHistory } from 'history';
 import i18n from 'i18next-client';
 import * as localStore from 'store';
 import * as path from 'path';
@@ -35,7 +30,7 @@ if (typeof window !== 'undefined') {
             namespaces: ['common'],
             defaultNs: 'common'
         },
-        resGetPath: path.join('/', 'locales/__lng__/__ns__.json'),
+        resGetPath: path.join('/', 'assets/locales/__lng__/__ns__.json'),
         supportedLngs: ['en', 'zh-HK'],
         preload: [locale]
         //preload: ['en', 'zh-HK']

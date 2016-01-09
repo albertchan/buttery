@@ -12,10 +12,12 @@ gulp.task('scripts', function() {
     var browserifyThis = function(bundleConfig) {
         var bundler = browserify({
             cache: {},
+            extensions: browserifyConf.extensions,
             packageCache: {},
-            debug: browserifyConf.debug,
+            debug: browserifyConf.debug, // produce source maps?
             entries: bundleConfig.entries,
-            fullPaths: true
+            fullPaths: browserifyConf.fullPaths,
+            transform: [babelify.configure(browserifyConf.babelify)]
         });
 
         bundler.transform(babelify);

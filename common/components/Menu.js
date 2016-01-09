@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { render } from 'react-dom';
+import { Link } from 'react-router';
 import classNames from 'classnames';
 
 
-export default class Menu extends React.Component {
+export default class Menu extends Component {
 
     constructor(props) {
         super(props);
@@ -28,9 +29,9 @@ export default class Menu extends React.Component {
                             <li key={i}
                                 className={classNames('menu-item', {'active': i == this.state.active})}
                                 onClick={(i) => this.handleClick.bind(i)}>
-                                <a href={link}>
+                                <Link to={link}>
                                     <span>{item.name}</span>
-                                </a>
+                                </Link>
                             </li>
                         );
                     }, this)}

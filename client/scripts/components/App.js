@@ -7,7 +7,17 @@ import { resetErrorMessage } from '../actions';
 import Menu from '../../../common/components/Menu';
 
 
-export default class App extends React.Component {
+// connect with decorator
+@connect(mapStateToProps, {resetErrorMessage, pushState})
+export default class App extends Component {
+    static propTypes = {
+        errorMessage: PropTypes.string,
+        resetErrorMessage: PropTypes.func.isRequired,
+        pushState: PropTypes.func.isRequired,
+        inputValue: PropTypes.string.isRequired,
+        children: PropTypes.node
+    };
+
     constructor(props) {
         super(props)
     }
@@ -32,16 +42,6 @@ export default class App extends React.Component {
 
 }
 
-App.propTypes = {
-    // Injected by React Redux
-    errorMessage: PropTypes.string,
-    resetErrorMessage: PropTypes.func.isRequired,
-    pushState: PropTypes.func.isRequired,
-    inputValue: PropTypes.string.isRequired,
-    // Injected by React Router
-    children: PropTypes.node
-};
-
 function mapStateToProps(state) {
     return {
         errorMessage: state.errorMessage,
@@ -49,7 +49,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {
-    resetErrorMessage,
-    pushState
-})(App);
+// connect without decorator
+//export default connect(mapStateToProps, mapDispatchToProps(dispatch))(App);
