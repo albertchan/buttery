@@ -24,18 +24,18 @@ export default class App extends React.Component {
                 <header className="by-header cf">
                     <nav className="by-header_left">
                         <ul className="by-menu by-menu--horizontal">
-                            <li>
+                            <li className="">
                                 <Dropdown>
                                     <a className="by-dropdown_trigger" href="javascript:;">Movies</a>
                                     <div className="by-dropdown_content">
                                         <ul className="by-menu by-menu--vertical">
-                                            <li><a href="javascript:;">Tomorrow</a></li>
-                                            <li><a href="javascript:;">Tomorrow</a></li>
-                                            <li><a href="javascript:;">Tomorrow</a></li>
-                                            <li><a href="javascript:;">Tomorrow</a></li>
+                                            <li><a href="javascript:;">Cinemas</a></li>
                                         </ul>
                                     </div>
                                 </Dropdown>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Movies</a>
                             </li>
                             <li><a href="javascript:;">Cinemas</a></li>
                         </ul>
