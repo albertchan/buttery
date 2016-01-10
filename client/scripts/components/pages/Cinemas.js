@@ -1,10 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import List from '../../../../common/components/List';
-import { fetchCinemasIfNeeded } from '../../actions';
+import { fetchCinemasIfNeeded } from '../../actions/cinemaActions';
 
 
-class Cinemas extends Component {
+@connect(mapStateToProps, {fetchCinemasIfNeeded})
+export default class Cinemas extends Component {
+    static propTypes = {
+        fetchCinemasIfNeeded: PropTypes.func.isRequired
+    };
+
     constructor(props) {
         super(props);
     }
@@ -30,10 +35,6 @@ class Cinemas extends Component {
     }
 }
 
-Cinemas.propTypes = {
-    fetchCinemasIfNeeded: PropTypes.func.isRequired
-};
-
 function mapStateToProps(state) {
     const { loadCinemas } = state;
     const {
@@ -50,7 +51,3 @@ function mapStateToProps(state) {
         fetchCinemasIfNeeded
     };
 }
-
-export default connect(mapStateToProps, {
-    fetchCinemasIfNeeded
-})(Cinemas);

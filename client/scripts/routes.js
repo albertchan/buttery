@@ -8,13 +8,15 @@ import * as pages from './components/pages';
 const {
     Cinema,
     Cinemas,
-    Movie
+    Movie,
+    Movies
 } = pages;
 
 export default (
     <Route path="/" component={App}>
         <Route path="/cinemas" component={Cinemas} />
         <Route path="/cinema/:cinemaId" component={Cinema} />
-        <Route path="/movie" component={Movie} />
+        <Route path="/movies" component={Movies} />
+        <Route path="/movie/:movieId" component={Movie} />
     </Route>
 )

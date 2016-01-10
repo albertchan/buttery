@@ -14,7 +14,6 @@ export default class Menu extends Component {
 
     handleClick(index, e) {
         e.preventDefault();
-        console.log(index);
         // this.setState({active: i}); // React will re-render when state changes
     }
 

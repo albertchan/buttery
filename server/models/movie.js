@@ -3,6 +3,7 @@
 module.exports = function(sequelize, DataTypes) {
     var Movie = sequelize.define("Movie", {
         id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true, allowNull: false},
+        active: {type: DataTypes.BOOLEAN, defaultValue: false},
         en_us: {type: DataTypes.STRING, allowNull: false},
         zh_cn: DataTypes.STRING,
         zh_hk: DataTypes.STRING,

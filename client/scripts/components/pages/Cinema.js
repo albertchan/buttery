@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Item from '../../../../common/components/Item';
-import { fetchCinemasIfNeeded } from '../../actions';
+import { fetchCinemasIfNeeded } from '../../actions/cinemaActions';
 
 
 class Cinema extends Component {
