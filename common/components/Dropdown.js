@@ -6,7 +6,8 @@ export default class Dropdown extends React.Component {
 
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
+        this._handleClick = this._handleClick.bind(this);
+        this._checkClick = this._checkClick.bind(this);
         this.state = {active: false};
     }
 
@@ -28,30 +29,53 @@ export default class Dropdown extends React.Component {
                         }, this);
 
         return (
-            <div className={classes} onClick={this.handleClick}>
+            <div className={classes} onClick={this._handleClick}>
                 {children}
             </div>
         );
     }
 
-    handleClick(event) {
+    componentDidMount() {
+        this._position();
+        document.addEventListener('click', this._checkClick);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('click', this._checkClick);
+    }
+
+    componentDidUpdate() {
+        this._position();
+    }
+
+    _handleClick(event) {
         if(event.target.className.indexOf('by-dropdown_trigger') !== -1) {
             this.setState({active: !this.state.active});
         }
     }
 
-    position() {
+    _position() {
         if(this._content.getBoundingClientRect().right > (window.innerWidth || document.documentElement.clientWidt)) {
             this._content.className += ' by-dropdown_content--right';
         }
     }
 
-    componentDidMount() {
-        this.position();
+    _checkClick(e) {
+        var el = ReactDOM.findDOMNode(this);
+        // Check if the target is inside the current component
+        if (e.target != el && !this._isDescendant(el, e.target) && document.documentElement.contains(e.target)) {
+            this.setState({active: false});
+        }
     }
 
-    componentDidUpdate() {
-        this.position();
+    _isDescendant(parent, child) {
+        var node = child.parentNode;
+
+        while (node != null) {
+            if (node == parent) return true;
+            node = node.parentNode;
+        }
+        return false;
     }
 
 }
