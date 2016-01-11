@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import List from '../../../../common/components/List';
+import MovieList from '../../../../common/components/MovieList';
 import { fetchMoviesIfNeeded } from '../../actions/movieActions';
 
 
@@ -20,16 +20,15 @@ export default class Movies extends Component {
 
     render() {
         const { movies, isFetching } = this.props;
-        console.log(movies);
 
         return (
             <div>
                 <h2>Movies</h2>
                 {isFetching &&
-                <div>Loading...</div>
+                    <div>Loading...</div>
                 }
                 {!isFetching && movies && movies.length > 0 &&
-                <List items={movies} />
+                    <MovieList items={movies} />
                 }
             </div>
         );
@@ -41,7 +40,7 @@ function mapStateToProps(state) {
     const {
         isFetching,
         items: movies
-        } = loadMovies || {
+    } = loadMovies || {
         isFetching: true,
         items: []
     };

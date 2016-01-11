@@ -34,7 +34,6 @@ module.exports = function(request, reply) {
                     image: movie.thumbnail_url
                 });
             });
-            console.log(arrayMovie);
 
             reply({data: arrayMovie});
         });

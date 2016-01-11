@@ -46,11 +46,15 @@ function receiveMovies(json, id) {
             id: id
         };
     } else {
-        const data = json.data.map(obj => {
-            const rObj = {};
-            rObj[obj.id] = obj.name;
-            return rObj;
-        });
+        //const data = json.data.map(obj => {
+        //    const rObj = {};
+        //    rObj[obj.id] = {
+        //        title: obj.title,
+        //        image: obj.image
+        //    };
+        //    return rObj;
+        //});
+        const data = json.data;
 
         return {
             type: RECEIVE_MOVIES,
