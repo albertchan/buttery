@@ -21,6 +21,7 @@ module.exports = function(sequelize, DataTypes) {
                 Movie.belongsToMany(models.Director, {through: 'movie_directors'});
                 Movie.belongsToMany(models.Genre, {through: 'movie_genres'});
                 Movie.belongsTo(models.Language);
+                Movie.hasMany(models.MovieShowing);
             }
         },
         tableName: 'movies',

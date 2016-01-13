@@ -4,7 +4,12 @@ import Item from '../../../../common/components/Item';
 import { fetchCinemasIfNeeded } from '../../actions/cinemaActions';
 
 
-class Cinema extends Component {
+@connect(mapStateToProps, {fetchCinemasIfNeeded})
+export default class Cinema extends Component {
+    static propTypes = {
+        fetchCinemasIfNeeded: PropTypes.func.isRequired
+    };
+
     constructor(props) {
         super(props);
     }
@@ -17,6 +22,7 @@ class Cinema extends Component {
     
     render() {
         const { cinema, isFetching } = this.props;
+        console.log(cinema);
         
         return (
             <div>
@@ -33,10 +39,6 @@ class Cinema extends Component {
         );
     }
 }
-
-Cinema.propTypes = {
-    fetchCinemasIfNeeded: PropTypes.func.isRequired
-};
 
 function mapStateToProps(state) {
     const { cinemaId } = state.router.params;

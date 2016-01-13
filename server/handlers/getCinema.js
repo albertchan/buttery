@@ -6,14 +6,21 @@ module.exports = function(request, reply) {
     
     if (cinemaId) {
 
-        models.Cinema.findById(cinemaId).then(function(cinema) {
+        models.Cinema.find({
+            where: {id: cinemaId},
+            include: [{
+                model: models.MovieShowing
+            }]
+        }).then(function(cinema) {
+            console.log(cinema);
             const locale = 'en_us',
-                  address = 'address_' + locale;
+                address = 'address_' + locale;
             let data = {
                 name: cinema[locale],
                 address: cinema[address],
                 phone: cinema.cinema_phone,
-                url: cinema.cinema_url
+                url: cinema.cinema_url,
+                movieShowings: cinema.MovieShowings
             };
 
             reply({data: data});
@@ -22,9 +29,10 @@ module.exports = function(request, reply) {
     } else {
 
         models.Cinema.findAll({
-            include: [
-                {model: models.City, where: {region_id: 1}}
-            ]
+            include: [{
+                model: models.City,
+                where: {region_id: 1}
+            }]
         }).then(function(cinemas) {
             var arrayCinema = [];
 
