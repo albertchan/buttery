@@ -9,7 +9,8 @@ module.exports = function(request, reply) {
         models.Cinema.find({
             where: {id: cinemaId},
             include: [{
-                model: models.MovieShowing
+                model: models.MovieShowing,
+                include: [models.Movie]
             }]
         }).then(function(cinema) {
             console.log(cinema);
