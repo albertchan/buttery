@@ -20,14 +20,14 @@ export default class MovieList extends React.Component {
         const items = this.props.items !== undefined ? this.props.items : [];
 
         return (
-            <ul className="list-group">
+            <ul className="by-list by-list--vertical">
                 {items.map(function(item, i) {
                     // item = {id: id, title: 'Movie title', image: thumbnail_url}
                     var link = '/movie/' + item.id;
 
                     return (
                         <li key={i}
-                            className={classNames('list-group-item')}
+                            className={classNames('by-list_item')}
                             onClick={(i) => this.handleClick.bind(i)}>
                             <Link to={link}>
                                 <span>{item.title}</span>

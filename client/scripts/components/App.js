@@ -33,30 +33,30 @@ export default class App extends Component {
             <div title={title}>
                 <header className="by-header cf">
                     <nav className="by-header_left">
-                        <ul className="by-menu by-menu--horizontal dn-ns">
+                        <ul className="by-list by-list--horizontal dn-ns">
                             <li>
                                 <Dropdown>
                                     <a className="by-dropdown_trigger" href="javascript:;">Movies</a>
                                     <div className="by-dropdown_content">
-                                        <ul className="by-menu by-menu--vertical">
+                                        <ul className="by-list by-list--vertical">
                                             <li><a href="javascript:;">Cinemas</a></li>
                                         </ul>
                                     </div>
                                 </Dropdown>
                             </li>
                         </ul>
-                        <ul className="by-menu by-menu--horizontal dn db-ns">
+                        <ul className="by-list by-list--horizontal dn db-ns">
                             <li><a href="javascript:;">Movies</a></li>
                             <li><a href="javascript:;">Cinemas</a></li>
                         </ul>
                     </nav>
                     <div className="by-header_right">
-                        <ul className="by-menu by-menu--horizontal">
+                        <ul className="by-list by-list--horizontal">
                             <li>
                                 <Dropdown>
                                     <a className="by-dropdown_trigger" href="javascript:;">Today</a>
                                     <div className="by-dropdown_content">
-                                        <ul className="by-menu by-menu--vertical">
+                                        <ul className="by-list by-list--vertical">
                                             <li><a href="javascript:;">Tomorrow</a></li>
                                             <li><a href="javascript:;">Tomorrow</a></li>
                                             <li><a href="javascript:;">Tomorrow</a></li>

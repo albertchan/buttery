@@ -20,38 +20,6 @@ body {
   float: right;
 }
 
-// menu
-.by-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.by-menu li,
-.by-menu_item {
-  a {
-    display: block;
-    padding: 1em;
-    font-weight: 500;
-    text-decoration: none;
-    // transition: background-color .2s linear;
-    // background-color: darken($color-black, 2%);
-  }
-  a.active{
-    background-color: darken($color-black, 2%);
-  }
-}
-
-.by-menu--horizontal li,
-.by-menu--horizontal .by-menu_item {
-  display: inline-block;
-  vertical-align: top;
-}
-
-.by-menu--vertical li,
-.by-menu--vertical .by-menu_item{
-  display: block;
-}
-
 // dropdown
 $dropdown-content-w: 20rem; //16*20 =320
 

@@ -1,0 +1,31 @@
+// list
+.by-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.by-list li,
+.by-list_item {
+  a {
+    display: block;
+    padding: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    // transition: background-color .2s linear;
+    // background-color: darken($color-black, 2%);
+  }
+  a.active{
+    background-color: darken($color-black, 2%);
+  }
+}
+
+.by-list--horizontal li,
+.by-list--horizontal .by-list_item {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.by-list--vertical li,
+.by-list--vertical .by-list_item{
+  display: block;
+}
