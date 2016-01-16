@@ -26,8 +26,8 @@ export default class Movies extends Component {
                 <span className="red">Sample</span>
                 <span className="green">Sample</span>
                 <span className="yellow">Sample</span>
-                <button className="by-btn by-btn--primary">Button</button>
-                <button className="by-btn by-btn--secondary">Button</button>
+                <button className="by-btn by-btn--buttery">Button</button>
+                <button className="by-btn by-btn--gray">Button</button>
                 <h2>Movies</h2>
                 {isFetching &&
                     <div>Loading...</div>

@@ -51,29 +51,29 @@ $btn--color-secondary: $color-gray;
 }
 
 // primary
-.by-btn--primary {
+.by-btn--buttery {
   background-color: $btn--color-primary;
   color: $color-black !important; //overwrite links
 }
-.by-btn--primary.focus,
-.by-btn--primary:focus {
+.by-btn--buttery.focus,
+.by-btn--buttery:focus {
   box-shadow: 0 0 0 2px $color-black, 0 0 0 4px transparentize($btn--color-primary, 0.3);
 }
-.by-btn--primary.active,
-.by-btn--primary:active {
+.by-btn--buttery.active,
+.by-btn--buttery:active {
   box-shadow: inset 0 0 0 1px $color-black;
 }
 
 // secondary
-.by-btn--secondary {
+.by-btn--gray {
   background-color: $btn--color-secondary;
   color: $color-white !important; //overwrite links
 }
-.by-btn--secondary.focus,
-.by-btn--secondary:focus {
+.by-btn--gray.focus,
+.by-btn--gray:focus {
   box-shadow: 0 0 0 2px $color-black, 0 0 0 4px transparentize($btn--color-secondary, 0.3);
 }
-.by-btn--secondary.active,
-.by-btn--secondary:active {
+.by-btn--gray.active,
+.by-btn--gray:active {
   box-shadow: inset 0 0 0 1px $color-black;
 }
