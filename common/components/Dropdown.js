@@ -13,20 +13,20 @@ export default class Dropdown extends React.Component {
 
     render() {
         var classes = classNames('by-dropdown', {'active': this.state.active});
-        var children =  React.Children.map(this.props.children, function(child){
-                            if(child.props.className.indexOf('by-dropdown') === -1) return;
+        var children = React.Children.map(this.props.children, function(child) {
+            if(child.props.className.indexOf('by-dropdown') === -1) return;
 
-                            var classes = classNames(child.props.className, {'active': this.state.active});
-                            var returnedChild =  React.cloneElement(child, {className: classes});
-                            
-                            if(child.props.className.indexOf('by-dropdown_content') !== -1) {
-                                returnedChild = React.cloneElement(returnedChild, {
-                                    ref: (c) => this._content = c
-                                });
-                            }
+            var classes = classNames(child.props.className, {'active': this.state.active});
+            var returnedChild =  React.cloneElement(child, {className: classes});
 
-                            return returnedChild
-                        }, this);
+            if(child.props.className.indexOf('by-dropdown_content') !== -1) {
+                returnedChild = React.cloneElement(returnedChild, {
+                    ref: (c) => this._content = c
+                });
+            }
+
+            return returnedChild
+        }, this);
 
         return (
             <div className={classes} onClick={this._handleClick}>
