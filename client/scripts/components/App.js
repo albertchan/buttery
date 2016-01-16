@@ -23,8 +23,8 @@ export default class App extends React.Component {
             <div title={title}>
                 <header className="by-header cf">
                     <nav className="by-header_left">
-                        <ul className="by-menu by-menu--horizontal">
-                            <li className="">
+                        <ul className="by-menu by-menu--horizontal dn-ns">
+                            <li>
                                 <Dropdown>
                                     <a className="by-dropdown_trigger" href="javascript:;">Movies</a>
                                     <div className="by-dropdown_content">
@@ -34,9 +34,9 @@ export default class App extends React.Component {
                                     </div>
                                 </Dropdown>
                             </li>
-                            <li>
-                                <a href="javascript:;">Movies</a>
-                            </li>
+                        </ul>
+                        <ul className="by-menu by-menu--horizontal dn db-ns">
+                            <li><a href="javascript:;">Movies</a></li>
                             <li><a href="javascript:;">Cinemas</a></li>
                         </ul>
                     </nav>

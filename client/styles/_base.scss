@@ -33,9 +33,9 @@ body {
     padding: 1em;
     font-weight: 500;
     text-decoration: none;
-    transition: background-color .2s linear;
+    // transition: background-color .2s linear;
+    // background-color: darken($color-black, 2%);
   }
-  a:hover ,
   a.active{
     background-color: darken($color-black, 2%);
   }
@@ -53,19 +53,29 @@ body {
 }
 
 // dropdown
-.by-dropdown {
-  position: relative;
-}
+$dropdown-content-w: 20rem; //16*20 =320
+
+// .by-dropdown {
+//   position: relative;
+// }
 .by-dropdown_content {
   position: relative;
   display: none;
-  width: 20rem; //16*20 =320
-  background-color: $color-gray;
+  width: 100%;
+  left: 0;
+  background-color: darken($color-black, 2%);
 }
 .by-dropdown_content.active {
   position: absolute;
   display: block;
 }
-.by-dropdown_content--right {
-  right: 0;
+
+@media #{$breakpoint--not-small} {
+  .by-dropdown {
+    position: relative;
+  }
+  .by-dropdown_content {
+    left: auto;
+    width: $dropdown-content-w;
+  }
 }
