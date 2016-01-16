@@ -32,7 +32,7 @@ export default class MovieList extends React.Component {
                             <Link className="cf" to={link} title={item.title}>
                                 <div className="mw-75 u-float-left">{item.title}</div>
                                 <div className="mw-25 u-float-right tr">
-                                    <div className="f2">24 mins</div>
+                                    <div className="f2"><span className="yellow">24 mins</span></div>
                                     <div className="f0">UA Cityplaza</div>
                                 </div>
                             </Link>
