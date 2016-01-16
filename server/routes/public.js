@@ -22,6 +22,10 @@ const publicRoutes = [
         path: '/api/movie/{movieId?}',
         method: 'GET',
         handler: require('../handlers/getMovie')
+    }, {
+        path: '/api/region/{movieId?}',
+        method: 'GET',
+        handler: require('../handlers/getRegion')
     }
 
 ];

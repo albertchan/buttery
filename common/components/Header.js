@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import i18n from 'i18next-client';
 import classNames from 'classnames';
 import Dropdown from './Dropdown';
+import SelectRegion from './SelectRegion';
 
 
 export default class Header extends React.Component {
@@ -60,7 +61,9 @@ export default class Header extends React.Component {
                                 </div>
                             </Dropdown>
                         </li>
-                        <li><a href="javascript:;">Hong Kong</a></li>
+                        <li>
+                            <SelectRegion />
+                        </li>
                     </ul>
                 </div>
             </header>
