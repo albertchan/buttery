@@ -19,7 +19,7 @@ export default class List extends React.Component {
         const items = this.props.items !== undefined ? this.props.items : [];
 
         return (
-            <ul className="list-group">
+            <ul className="by-menu by-menu--vertical">
                 {items.map(function(item, i) {
                     // item = {id: 'Cinema name'}
                     var id = Object.keys(item)[0],
@@ -27,7 +27,7 @@ export default class List extends React.Component {
 
                     return (
                         <li key={i}
-                            className={classNames('list-group-item')}
+                            className={classNames('by-menu_item')}
                             onClick={(i) => this.handleClick.bind(i)}>
                             <a href={link}>
                                 <span>{item[id]}</span>
