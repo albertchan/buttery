@@ -35,7 +35,6 @@ export default class App extends Component {
                 <Header menu={menuArray} />
                 <h1>{title}</h1>
                 <p className="subheading">{i18n.t('app.tagline')}</p>
-                <Menu items={menuArray} />
                 <div className="content">
                     {children}
                 </div>
