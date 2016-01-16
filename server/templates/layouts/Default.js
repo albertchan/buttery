@@ -1,5 +1,6 @@
 var React = require('react'),
-    ReactPropTypes = React.PropTypes;
+    ReactPropTypes = React.PropTypes,
+    Dropdown = require('../../../common/components/Dropdown.js');
 
 var Default = React.createClass({
 

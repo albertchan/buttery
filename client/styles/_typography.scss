@@ -1,0 +1,64 @@
+// var
+$type--color-text: $color-white;
+$type--color-link: $color-buttery;
+
+$type--ratio: 1.333;
+$type--base: $font-size-base; // 16px most browser default
+
+$type--0: 0.75em;
+$type--1: $type--base;
+$type--2: 1.333em;
+$type--3: 1.777em;
+$type--4: 2.369em;
+$type--5: 3.157em;
+
+
+
+body {
+  font-family: $font-family-sans;
+  font-size: 100%; // 16px most browser default
+}
+
+// size
+// ratio: 1.333
+// base: 16px
+.f0 {
+  font-size: $type--0;
+}
+.f1 {
+  font-size: $type--1;
+}
+.f2 {
+  font-size: $type--2;
+}
+.f3 {
+  font-size: $type--3;
+}
+.f4 {
+  font-size: $type--4;
+}
+.f5 {
+  font-size: $type--5;
+}
+
+// link
+a {
+  color: $type--color-text;
+  transition: color .2s linear;
+  outline: 0;
+}
+a:visited {
+  color: darken($type--color-text, 20%);
+}
+a:focus,
+a:hover {
+  color: $type--color-link;
+}
+
+// headings
+h1,.h1 {
+  font-family: $font-family-sans;
+  font-size: $type--5;
+  line-height: $type--ratio;
+  font-weight: 500;
+}
