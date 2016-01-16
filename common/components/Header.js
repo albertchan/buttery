@@ -37,8 +37,7 @@ export default class Header extends React.Component {
                             var link = '/' + item.id;
                             return (
                                 <li key={i}
-                                    className={classNames({'active': i == this.state.active})}
-                                    onClick={(i) => this.handleClick.bind(i)}>
+                                    className={classNames({'active': i == this.state.active})}>
                                     <Link to={link}>{item.name}</Link>
                                 </li>
                             );
