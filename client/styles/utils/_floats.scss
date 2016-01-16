@@ -1,0 +1,46 @@
+// /*
+
+//    FLOATS
+
+//    1. Floated elements are automatically rendered as block level elements.
+//       Setting floats to display inline will fix the double margin bug in
+//       ie6. You know... just in case.
+
+//    2. Don't forget to clearfix your floats with .cf
+
+//    Base:
+//      f = float
+
+//    Modifiers:
+//      l = left
+//      r = right
+//      n = none
+
+//    Media Query Extensions:
+//      -ns = not-small
+//      -m  = medium
+//      -l  = large
+
+// */
+
+.u-float-left { float: left;  display: inline; }
+.u-float-right { float: right; display: inline; }
+.u-float-none { float: none; }
+
+@media #{$breakpoint--not-small} {
+  .u-float-left--ns { float: left; display: inline; }
+  .u-float-right--ns { float: right;display: inline; }
+  .u-float-none--ns { float: none!important; }
+}
+
+@media #{$breakpoint--medium} {
+  .u-float-left--m { float: left; display: inline; }
+  .u-float-right--m { float: right;  display: inline; }
+  .u-float-none--m { float: none; }
+}
+
+@media #{$breakpoint--large} {
+  .u-float-left--l { float: left; display: inline; }
+  .u-float-right--l { float: right;  display: inline; }
+  .u-float-none--l { float: none; }
+}

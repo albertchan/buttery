@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/albertchan/buttery.git"
+    "url": "git+ssh://git@github.com/jakechan/buttery.git"
   },
   "keywords": [
     "flux",
@@ -20,12 +20,12 @@
     "nodejs",
     "react"
   ],
-  "author": "Albert Chan",
+  "author": "jake Chan",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/albertchan/buttery/issues"
+    "url": "https://github.com/jakechan/buttery/issues"
   },
-  "homepage": "https://github.com/albertchan/buttery#readme",
+  "homepage": "https://github.com/jakechan/buttery#readme",
   "dependencies": {
     "bluebird": "^2.10.2",
     "bole": "~2.0.0",
@@ -34,8 +34,8 @@
     "dotenv": "^1.2.0",
     "es6-promise": "~3.x.x",
     "hapi": "^11.x.x",
-    "hapi-react-views": "~4.x.x",
     "hapi-i18next": "~2.x.x",
+    "hapi-react-views": "~4.x.x",
     "history": "~1.x.x",
     "i18next-client": "~1.x.x",
     "inert": "^3.x.x",
@@ -63,6 +63,7 @@
     "babelify": "~6.x.x",
     "bootstrap-sass": "~3.x.x",
     "gulp": "~3.x.x",
+    "gulp-autoprefixer": "^3.1.0",
     "gulp-if": "~1.x.x",
     "gulp-load-plugins": "~1.x.x",
     "gulp-minify-css": "~1.x.x",

@@ -1,6 +1,7 @@
 var React = require('react'),
     Default =require('./layouts/Default'),
     Menu = require('../../common/components/Menu'),
+    Dropdown = require('../../common/components/Dropdown.js'),
     ReactPropTypes = React.PropTypes;
 
 

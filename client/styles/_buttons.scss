@@ -1,0 +1,79 @@
+// var
+$btn--font-family: $font-family-sans;
+$btn--color-primary: $color-buttery;
+$btn--color-secondary: $color-gray;
+
+// buttons
+.by-btn {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: transparent;
+  line-height: 1;
+  text-transform: uppercase;
+  padding: 1.333em 1.777em;
+  margin: 0;
+  vertical-align: middle;
+  height: auto;
+  border-width: 0;
+  border-radius: 2px;
+  font-family: $btn--font-family;
+  font-size: .75em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  outline: 0;
+  transition: opacity 0.2s linear;
+  text-align: center;
+  &,
+  &:visited,
+  &:hover {
+    color: $color-white;
+    opacity: 1;
+  }
+}
+
+.by-btn.hover,
+.by-btn:hover {
+  opacity: 0.7;
+}
+
+.by-btn.disabled,
+.by-btn[disabled] {
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
+
+// primary
+.by-btn--primary {
+  background-color: $btn--color-primary;
+  color: $color-black !important; //overwrite links
+}
+.by-btn--primary.focus,
+.by-btn--primary:focus {
+  box-shadow: 0 0 0 2px $color-black, 0 0 0 4px transparentize($btn--color-primary, 0.3);
+}
+.by-btn--primary.active,
+.by-btn--primary:active {
+  box-shadow: inset 0 0 0 1px $color-black;
+}
+
+// secondary
+.by-btn--secondary {
+  background-color: $btn--color-secondary;
+  color: $color-white !important; //overwrite links
+}
+.by-btn--secondary.focus,
+.by-btn--secondary:focus {
+  box-shadow: 0 0 0 2px $color-black, 0 0 0 4px transparentize($btn--color-secondary, 0.3);
+}
+.by-btn--secondary.active,
+.by-btn--secondary:active {
+  box-shadow: inset 0 0 0 1px $color-black;
+}
