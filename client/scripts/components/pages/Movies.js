@@ -23,11 +23,6 @@ export default class Movies extends Component {
 
         return (
             <div className="mw6-ns center">
-                <span className="red">Sample</span>
-                <span className="green">Sample</span>
-                <span className="yellow">Sample</span>
-                <button className="by-btn by-btn--buttery">Button</button>
-                <button className="by-btn by-btn--gray">Button</button>
                 <h2>Movies</h2>
                 {isFetching &&
                     <div>Loading...</div>
