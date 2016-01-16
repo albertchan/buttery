@@ -20,26 +20,26 @@ export default class MovieList extends React.Component {
         const items = this.props.items !== undefined ? this.props.items : [];
 
         return (
-            <ul className="by-list by-list--vertical">
+            <section>
                 {items.map(function(item, i) {
                     // item = {id: id, title: 'Movie title', image: thumbnail_url}
                     var link = '/movie/' + item.id;
-
+                    console.log(item);
                     return (
-                        <li key={i}
-                            className={classNames('by-list_item')}
+                        <article key={i}
+                            title={item.title}
+                            className={classNames('cf', 'mvm')}
                             onClick={(i) => this.handleClick.bind(i)}>
-                            <Link className="cf" to={link} title={item.title}>
-                                <div className="mw-75 u-float-left">{item.title}</div>
-                                <div className="mw-25 u-float-right tr">
-                                    <div className="f2"><span className="yellow">24 mins</span></div>
-                                    <div className="f0">UA Cityplaza</div>
-                                </div>
-                            </Link>
-                        </li>
+                            <div className="mw-75--ns u-float-left--ns">{item.title}</div>
+                            <div className="u-float-right--ns tc">
+                                <Link className="by-btn by-btn--gray" to={link} >
+                                    <small className="green">24 mins</small> | UA Cityplaza
+                                </Link>
+                            </div>
+                        </article>
                     );
                 }, this)}
-            </ul>
+            </section>
         );
     }
 
