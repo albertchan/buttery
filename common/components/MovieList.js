@@ -29,8 +29,12 @@ export default class MovieList extends React.Component {
                         <li key={i}
                             className={classNames('by-list_item')}
                             onClick={(i) => this.handleClick.bind(i)}>
-                            <Link to={link}>
-                                <span>{item.title}</span>
+                            <Link className="cf" to={link} title={item.title}>
+                                <div className="mw-75 u-float-left">{item.title}</div>
+                                <div className="mw-25 u-float-right tr">
+                                    <div className="f2">24 mins</div>
+                                    <div className="f0">UA Cityplaza</div>
+                                </div>
                             </Link>
                         </li>
                     );

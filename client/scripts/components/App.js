@@ -31,7 +31,7 @@ export default class App extends Component {
             title = i18n.t('app.name');
 
         return (
-            <div title={title}>
+            <div>
                 <Header menu={menuArray} />
                 <main className="content">
                     {children}
