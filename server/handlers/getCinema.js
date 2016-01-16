@@ -13,7 +13,6 @@ module.exports = function(request, reply) {
                 include: [models.Movie]
             }]
         }).then(function(cinema) {
-            console.log(cinema);
             const locale = 'en_us',
                 address = 'address_' + locale;
             let data = {
