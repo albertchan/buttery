@@ -4,11 +4,8 @@
         "tagline": "Movie information, show times, and more!"
     },
     "menu": [
-        {"id": "home", "name": "Home"},
         {"id": "cinemas", "name": "Cinemas"},
-        {"id": "movies", "name": "Movies"},
-        {"id": "showing", "name": "In Theaters"},
-        {"id": "upcoming", "name": "Coming Soon"}
+        {"id": "movies", "name": "Movies"}
     ],
     "location": {
         "region": [
