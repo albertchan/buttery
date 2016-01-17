@@ -3,6 +3,11 @@ import { routerStateReducer as router } from 'redux-router';
 
 // import * as ActionTypes from '../actions';
 import {
+    // common
+    CHANGE_REGION
+} from '../actions'
+
+import {
     // cinema
     INVALIDATE_CINEMA,
     REQUEST_CINEMA,
@@ -105,6 +110,15 @@ function loadMovies(state = { }, action) {
     }
 }
 
+function changeRegion(state = { }, action) {
+    const { type, id } = action;
+
+    if (type === CHANGE_REGION && id !== undefined) {
+        console.log('CHNAGE_REGION');
+    }
+    return state;
+}
+
 // Updates error message to notify about the failed fetches.
 function errorMessage(state = null, action) {
     const { type, error } = action;
@@ -118,6 +132,7 @@ function errorMessage(state = null, action) {
 }
 
 const rootReducer = combineReducers({
+    changeRegion,
     loadCinemas,
     loadMovies,
     errorMessage,

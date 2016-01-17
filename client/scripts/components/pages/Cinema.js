@@ -59,6 +59,6 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps, {
-    fetchCinemasIfNeeded
-})(Cinema);
+//export default connect(mapStateToProps, {
+//    fetchCinemasIfNeeded
+//})(Cinema);

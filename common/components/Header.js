@@ -62,7 +62,7 @@ export default class Header extends React.Component {
                             </Dropdown>
                         </li>
                         <li>
-                            <SelectRegion />
+                            <SelectRegion items={this.props.region} handleChange={this.props.changeRegion.bind(this)} />
                         </li>
                     </ul>
                 </div>
@@ -72,4 +72,8 @@ export default class Header extends React.Component {
 
 }
 
-Header.propTypes = { menu: React.PropTypes.array };
+Header.propTypes = {
+    menu: React.PropTypes.array.isRequired,
+    region: React.PropTypes.array.isRequired,
+    changeRegion: React.PropTypes.func.isRequired
+};

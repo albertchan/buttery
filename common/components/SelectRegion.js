@@ -21,15 +21,12 @@ export default class SelectRegion extends Component {
 
     handleClick(index, e) {
         e.preventDefault();
-         this.setState({selected: index}); // React will re-render when state changes
+        this.setState({selected: index}); // React will re-render when state changes
+        this.props.handleChange(index);
     }
 
     render() {
-        let items = [
-            {id: 1, name: 'Hong Kong'},
-            {id: 2, name: 'Kownloon'},
-            {id: 3, name: 'New Territories'}
-        ];
+        let items = this.props.items;
 
         return (
             <Dropdown>
@@ -51,7 +48,8 @@ export default class SelectRegion extends Component {
 
 }
 
-SelectRegion.propTypes = { selected: React.PropTypes.string };
-
-// connect without decorator
-//export default connect(mapStateToProps, mapDispatchToProps(dispatch))(SelectRegion);
+SelectRegion.propTypes = {
+    handleChange: React.PropTypes.func.isRequired,
+    items: React.PropTypes.array.isRequired,
+    selected: React.PropTypes.string
+};
