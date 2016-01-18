@@ -2,9 +2,14 @@ import * as models from '../models';
 
 
 module.exports = function(request, reply) {
-    let cinemaId = request.params.cinemaId;
+    //let cinemaId = request.params.cinemaId,
+    //    regionId = request.params.regionId;
+    const params = request.params.cinemaParams,
+          parts = params ? params.split('/') : [],
+          regionId = parts[0],
+          cinemaId = parts[1];
     
-    if (cinemaId) {
+    if (regionId && cinemaId) {
 
         models.Cinema.find({
             where: {id: cinemaId},
@@ -27,12 +32,10 @@ module.exports = function(request, reply) {
         });
 
     } else {
+        let include = regionId ? {model: models.City, where: {region_id: regionId}} : {model: models.City};
 
         models.Cinema.findAll({
-            include: [{
-                model: models.City,
-                where: {region_id: 1}
-            }]
+            include: [include]
         }).then(function(cinemas) {
             var arrayCinema = [];
 
