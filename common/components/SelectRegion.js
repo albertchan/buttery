@@ -5,37 +5,38 @@ import classNames from 'classnames';
 import Dropdown from './Dropdown';
 
 
+let items = {};
+
 export default class SelectRegion extends Component {
 
     constructor(props) {
         super(props);
 
+        for (var item of this.props.items) {
+            items[item.id] = item.name;
+        }
+
         this.state = {
-            selected: this.props.selected || 0
+            items: items,
+            selected: this.props.selected || 1
         };
     }
 
-    componentDidMount() {
-
-    }
-
-    handleClick(index, e) {
+    handleClick(id, e) {
         e.preventDefault();
-        this.setState({selected: index}); // React will re-render when state changes
-        this.props.handleChange(index);
+        this.setState({selected: id}); // React will re-render when state changes
+        this.props.handleChange(id);
     }
 
     render() {
-        let items = this.props.items;
-
         return (
             <Dropdown>
-                <a className="by-dropdown_trigger" href="javascript:;">{items[this.state.selected].name}</a>
+                <a className="by-dropdown_trigger" href="javascript:;">{items[this.state.selected]}</a>
                 <div className="by-dropdown_content">
                     <ul className="by-menu by-menu--vertical">
-                        {items.map(function(item, i) {
+                        {this.props.items.map(function(item, i) {
                             return (
-                                <li key={i} onClick={this.handleClick.bind(this, i)}>
+                                <li key={item.id} onClick={this.handleClick.bind(this, item.id)}>
                                     <a href="javascript:;">{item.name}</a>
                                 </li>
                             );

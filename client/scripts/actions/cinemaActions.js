@@ -38,20 +38,24 @@ function requestCinemas(id) {
 
 }
 
+function receiveCinema(json, id) {
+    console.log(json, id);
+}
+
 function receiveCinemas(json, id) {
+    const data = json.data.map(obj => {
+        const rObj = {};
+        rObj[obj.id] = obj.name;
+        return rObj;
+    });
+
     if (id) {
         return {
             type: RECEIVE_CINEMAS,
-            cinema: json.data,
+            cinemas: data,
             id: id
         };
     } else {
-        const data = json.data.map(obj => {
-            const rObj = {};
-            rObj[obj.id] = obj.name;
-            return rObj;
-        });
-
         return {
             type: RECEIVE_CINEMAS,
             cinemas: data
@@ -59,20 +63,42 @@ function receiveCinemas(json, id) {
     }
 }
 
-function fetchCinemas(id) {
-    let endpoint = id ? '/api/cinema/' + id : '/api/cinema';
+function fetchCinema(id) {
+    if (!id) return;
+    let endpoint = '/api/cinema/' + id;
 
     return dispatch => {
         dispatch(requestCinemas());
-        // return fetch('/api/cinema')
+        return fetch(endpoint)
+            .then(response => response.json())
+            .then(json => dispatch(receiveCinema(json, id)));
+    };
+}
+
+function fetchCinemas(id) {
+    let endpoint = id ? '/api/cinemas/' + id : '/api/cinemas';
+
+    return dispatch => {
+        dispatch(requestCinemas());
         return fetch(endpoint)
             .then(response => response.json())
             .then(json => dispatch(receiveCinemas(json, id)));
     };
 }
 
-function shouldFetchCinemas(state, cinema) {
-    const cinemas = state.loadCinemas[cinema];
+function shouldFetchCinema(state, cinemaId) {
+    const cinema = state.loadCinema[cinemaId];
+    if (!cinema) {
+        return true;
+    }
+    if (cinema.isFetching) {
+        return false;
+    }
+    return cinema.didInvalidate;
+}
+
+function shouldFetchCinemas(state, cinemaId) {
+    const cinemas = state.loadCinemas[cinemaId];
     if (!cinemas) {
         return true;
     }
@@ -80,6 +106,16 @@ function shouldFetchCinemas(state, cinema) {
         return false;
     }
     return cinemas.didInvalidate;
+}
+
+export function fetchCinemaIfNeeded(id) {
+    return (dispatch, getState) => {
+
+        if (shouldFetchCinema(getState(), id)) {
+            // dispatch thunk from thunk
+            return dispatch(fetchCinema(id));
+        }
+    };
 }
 
 export function fetchCinemasIfNeeded(id) {

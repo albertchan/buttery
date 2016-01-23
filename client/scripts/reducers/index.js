@@ -46,19 +46,24 @@ function cinemas(state = {
                 didInvalidate: false
             });
         case RECEIVE_CINEMAS:
-            if (action.id) {
-                return Object.assign({}, state, {
-                    isFetching: false,
-                    didInvalidate: false,
-                    item: action.cinema
-                });
-            } else {
-                return Object.assign({}, state, {
-                    isFetching: false,
-                    didInvalidate: false,
-                    items: action.cinemas
-                });
-            }
+            return Object.assign({}, state, {
+                isFetching: false,
+                didInvalidate: false,
+                items: action.cinemas
+            });
+            //if (action.id) {
+            //    return Object.assign({}, state, {
+            //        isFetching: false,
+            //        didInvalidate: false,
+            //        item: action.cinema
+            //    });
+            //} else {
+            //    return Object.assign({}, state, {
+            //        isFetching: false,
+            //        didInvalidate: false,
+            //        items: action.cinemas
+            //    });
+            //}
         // movie related
         case INVALIDATE_MOVIES:
             return Object.assign({}, state, {
@@ -113,8 +118,8 @@ function loadMovies(state = { }, action) {
 function changeRegion(state = { }, action) {
     const { type, id } = action;
 
-    if (type === CHANGE_REGION && id !== undefined) {
-        console.log('CHNAGE_REGION');
+    if (type === RECEIVE_CINEMAS && id !== undefined) {
+        return Object.assign({}, state, cinemas(state, action));
     }
     return state;
 }

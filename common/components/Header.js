@@ -15,6 +15,10 @@ export default class Header extends React.Component {
         this.state = {};
     }
 
+    handleClick(e) {
+
+    }
+
     render() {
         const items = this.props.items !== undefined ? this.props.items : [];
 

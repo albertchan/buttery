@@ -4,17 +4,19 @@ import { connect } from 'react-redux';
 import { pushState } from 'redux-router';
 import i18n from 'i18next-client';
 import { changeRegion, resetErrorMessage } from '../actions';
+import { fetchCinemasIfNeeded } from '../actions/cinemaActions';
 
 import Header from '../../../common/components/Header';
 import Menu from '../../../common/components/Menu';
 
 
 // connect with decorator
-@connect(mapStateToProps, {changeRegion, resetErrorMessage, pushState})
+@connect(mapStateToProps, {changeRegion, fetchCinemasIfNeeded, resetErrorMessage, pushState})
 export default class App extends Component {
     static propTypes = {
         errorMessage: PropTypes.string,
         changeRegion: PropTypes.func.isRequired,
+        fetchCinemasIfNeeded: PropTypes.func.isRequired,
         resetErrorMessage: PropTypes.func.isRequired,
         pushState: PropTypes.func.isRequired,
         inputValue: PropTypes.string.isRequired,
@@ -25,8 +27,13 @@ export default class App extends Component {
         super(props)
     }
 
-    changeRegion(index) {
-        this.props.changeRegion(index);
+    changeRegion(id) {
+        let routes = this.props.inputValue.split('/');
+        this.props.changeRegion(id);
+
+        if (routes[0] === 'cinemas') {
+            this.props.fetchCinemasIfNeeded(id);
+        }
     }
 
     render() {
@@ -62,6 +69,7 @@ function mapStateToProps(state) {
     return {
         changeRegion: state.changeRegion,
         errorMessage: state.errorMessage,
+        fetchCinemasIfNeeded: state.fetchCinemasIfNeeded,
         inputValue: state.router.location.pathname.substring(1)
     }
 }

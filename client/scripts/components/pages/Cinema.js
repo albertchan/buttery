@@ -22,7 +22,6 @@ export default class Cinema extends Component {
     
     render() {
         const { cinema, isFetching } = this.props;
-        console.log(cinema);
         
         return (
             <div>
@@ -58,7 +57,3 @@ function mapStateToProps(state) {
         fetchCinemasIfNeeded
     };
 }
-
-//export default connect(mapStateToProps, {
-//    fetchCinemasIfNeeded
-//})(Cinema);

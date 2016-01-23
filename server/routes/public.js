@@ -15,9 +15,13 @@ const publicRoutes = [
             }
         }
     }, {
-        path: '/api/cinema/{cinemaParams*}',
+        path: '/api/cinema/{cinemaId?}',
         method: 'GET',
         handler: require('../handlers/getCinema')
+    }, {
+        path: '/api/cinemas/{regionId?}',
+        method: 'GET',
+        handler: require('../handlers/getCinemas')
     }, {
         path: '/api/movie/{movieId?}',
         method: 'GET',

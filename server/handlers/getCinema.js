@@ -2,8 +2,6 @@ import * as models from '../models';
 
 
 module.exports = function(request, reply) {
-    //let cinemaId = request.params.cinemaId,
-    //    regionId = request.params.regionId;
     const params = request.params.cinemaParams,
           parts = params ? params.split('/') : [],
           regionId = parts[0],
