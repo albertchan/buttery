@@ -43,10 +43,12 @@ export default class MovieList extends React.Component {
 
                                     <div className="by-dropdown_content">
                                         <ul className="by-list by-list--vertical">
-                                            <li><a href="javascript:;">Tomorrow</a></li>
-                                            <li><a href="javascript:;">Tomorrow</a></li>
-                                            <li><a href="javascript:;">Tomorrow</a></li>
-                                            <li><a href="javascript:;">Tomorrow</a></li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <span className="db">UA Cine Times</span>
+                                                    <time className="db yellow f0">1 hr 5 mins</time>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </Dropdown>

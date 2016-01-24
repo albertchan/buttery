@@ -1,10 +1,6 @@
-// var
-$base--color-bg: $color-black;
-$base--color-text: $color-white;
-
 body {
-  background-color: $base--color-bg;
-  color: $base--color-text;
+  background-color: $color-white;
+  color: $color-black;
 }
 img {
   max-width: 100%;
@@ -21,38 +17,4 @@ img {
 }
 .by-header_right {
   float: right;
-}
-
-// dropdown
-$dropdown-content-w: 20rem; //16*20 =320
-$dropdown-z: 999;
-
-// .by-dropdown {
-//   position: relative;
-// }
-.by-dropdown_content {
-  position: relative;
-  display: none;
-  width: 100%;
-  left: 0;
-  background-color: darken($color-black, 2%);
-  z-index: $dropdown-z;
-}
-.by-dropdown_content.active {
-  position: absolute;
-  display: block;
-}
-
-@media #{$breakpoint--not-small} {
-  .by-dropdown {
-    position: relative;
-  }
-  .by-dropdown_content {
-    left: auto;
-    width: $dropdown-content-w;
-  }
-}
-
-// movie list
-.by-movie-list_movie {
 }
