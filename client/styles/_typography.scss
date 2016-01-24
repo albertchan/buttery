@@ -43,16 +43,16 @@ body {
 
 // link
 a {
-  color: $type--color-text;
+  color: $type--color-link;
   transition: color .2s linear;
   outline: 0;
 }
 a:visited {
-  color: darken($type--color-text, 20%);
+  color: darken($type--color-link, 20%);
 }
 a:focus,
 a:hover {
-  color: $type--color-link;
+  opacity: .5;
 }
 
 // headings
