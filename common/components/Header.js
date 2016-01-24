@@ -25,25 +25,24 @@ export default class Header extends React.Component {
         return (
             <header className="by-header cf">
                 <nav className="by-header_left">
-                    <ul className="by-menu by-menu--horizontal dn-ns">
+                    <ul className="by-list by-list--horizontal dn-ns">
                         <li>
                             <Dropdown>
                                 <a className="by-dropdown_trigger" href="javascript:;">Movies</a>
                                 <div className="by-dropdown_content">
-                                    <ul className="by-menu by-menu--vertical">
+                                    <ul className="by-list by-list--vertical">
                                         <li><a href="javascript:;">Cinemas</a></li>
                                     </ul>
                                 </div>
                             </Dropdown>
                         </li>
                     </ul>
-                    <ul className="by-menu by-menu--horizontal dn db-ns">
+                    <ul className="by-list by-list--horizontal dn db-ns">
                         {this.props.menu.map(function(item, i) {
                             var link = '/' + item.id;
                             return (
                                 <li key={i}
-                                    className={classNames({'active': i == this.state.active})}
-                                    onClick={(i) => this.handleClick.bind(i)}>
+                                    className={classNames({'active': i == this.state.active})}>
                                     <Link to={link}>{item.name}</Link>
                                 </li>
                             );
@@ -51,12 +50,12 @@ export default class Header extends React.Component {
                     </ul>
                 </nav>
                 <div className="by-header_right">
-                    <ul className="by-menu by-menu--horizontal">
+                    <ul className="by-list by-list--horizontal">
                         <li>
                             <Dropdown>
                                 <a className="by-dropdown_trigger" href="javascript:;">Today</a>
                                 <div className="by-dropdown_content">
-                                    <ul className="by-menu by-menu--vertical">
+                                    <ul className="by-list by-list--vertical">
                                         <li><a href="javascript:;">Tomorrow</a></li>
                                         <li><a href="javascript:;">Tomorrow</a></li>
                                         <li><a href="javascript:;">Tomorrow</a></li>

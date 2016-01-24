@@ -22,7 +22,7 @@ export default class Movies extends Component {
         const { movies, isFetching } = this.props;
 
         return (
-            <div>
+            <div className="mw8-ns phm center">
                 <h2>Movies</h2>
                 {isFetching &&
                     <div>Loading...</div>
