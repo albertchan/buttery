@@ -12,9 +12,9 @@ export default class Dropdown extends React.Component {
     }
 
     render() {
-        var classes = classNames('by-dropdown', {'active': this.state.active});
+        var classes = classNames('by-dropdown', this.props.customClass, {'active': this.state.active});
         var children = React.Children.map(this.props.children, function(child) {
-            if(child.props.className.indexOf('by-dropdown') === -1) return;
+            // if(child.props.className.indexOf('by-dropdown') === -1) return;
 
             var classes = classNames(child.props.className, {'active': this.state.active});
             var returnedChild =  React.cloneElement(child, {className: classes});
@@ -79,3 +79,4 @@ export default class Dropdown extends React.Component {
     }
 
 }
+Dropdown.propTypes = { customClass: React.PropTypes.string };

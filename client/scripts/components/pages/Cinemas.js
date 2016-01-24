@@ -22,7 +22,7 @@ export default class Cinemas extends Component {
         const { cinemas, isFetching } = this.props;
         
         return (
-            <div>
+            <div className="mw6-ns center">
                 <h2>Cinemas</h2>
                 {isFetching &&
                     <div>Loading...</div>

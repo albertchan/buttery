@@ -48,15 +48,13 @@ export default class App extends Component {
             ];
 
         return (
-            <div title={title}>
+            <div>
                 <Header menu={arrayMenu}
                         region={arrayRegion}
                         changeRegion={this.changeRegion.bind(this)} />
-                <h1>{title}</h1>
-                <p className="subheading">{i18n.t('app.tagline')}</p>
-                <div className="content">
+                <main className="content">
                     {children}
-                </div>
+                </main>
             </div>
         );
     }
