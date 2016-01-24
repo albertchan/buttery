@@ -16,13 +16,17 @@ $dropdown-z: 999;
   position: absolute;
   display: block;
 }
+.by-dropdown_content--right {
+  left: auto;
+  right: 0;
+}
 
 @media #{$breakpoint--not-small} {
   .by-dropdown {
     position: relative;
   }
   .by-dropdown_content {
-    left: auto;
+    // left: auto;
     width: $dropdown-content-w;
   }
 }
