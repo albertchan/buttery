@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
 import { routerStateReducer as router } from 'redux-router';
 
-// import * as ActionTypes from '../actions';
+// common actions
 import {
-    // common
-    CHANGE_REGION
+    CHANGE_REGION,
+    RESET_ERROR_MESSAGE
 } from '../actions'
 
+// cinema actions
 import {
-    // cinema
     INVALIDATE_CINEMA,
     REQUEST_CINEMA,
     RECEIVE_CINEMA,
@@ -17,16 +17,22 @@ import {
     RECEIVE_CINEMAS
 } from '../actions/cinemaActions';
 
+// movie actions
 import {
-    // movie
     INVALIDATE_MOVIE,
     REQUEST_MOVIE,
     RECEIVE_MOVIE,
     INVALIDATE_MOVIES,
     REQUEST_MOVIES,
-    RECEIVE_MOVIES,
-    RESET_ERROR_MESSAGE
+    RECEIVE_MOVIES
 } from '../actions/movieActions';
+
+// showing actions
+import {
+    INVALIDATE_SHOWINGS,
+    REQUEST_SHOWINGS,
+    RECEIVE_SHOWINGS
+} from '../actions/showingActions';
 
 
 function cinemas(state = {
@@ -51,19 +57,17 @@ function cinemas(state = {
                 didInvalidate: false,
                 items: action.cinemas
             });
-            //if (action.id) {
-            //    return Object.assign({}, state, {
-            //        isFetching: false,
-            //        didInvalidate: false,
-            //        item: action.cinema
-            //    });
-            //} else {
-            //    return Object.assign({}, state, {
-            //        isFetching: false,
-            //        didInvalidate: false,
-            //        items: action.cinemas
-            //    });
-            //}
+        default:
+            return state;
+    }
+}
+
+function movies(state = {
+    isFetching: false,
+    didInvalidate: false,
+    items: []
+}, action) {
+    switch (action.type) {
         // movie related
         case INVALIDATE_MOVIES:
             return Object.assign({}, state, {
@@ -93,6 +97,33 @@ function cinemas(state = {
     }
 }
 
+function showings(state = {
+    isFetching: false,
+    didInvalidate: false,
+    items: []
+}, action) {
+    switch (action.type) {
+        // showing related
+        case INVALIDATE_SHOWINGS:
+            return Object.assign({}, state, {
+                didInvalidate: true
+            });
+        case REQUEST_SHOWINGS:
+            return Object.assign({}, state, {
+                isFetching: true,
+                didInvalidate: false
+            });
+        case RECEIVE_SHOWINGS:
+            return Object.assign({}, state, {
+                isFetching: false,
+                didInvalidate: false,
+                items: action.showings
+            });
+        default:
+            return state;
+    }
+}
+
 function loadCinemas(state = { }, action) {
     switch (action.type) {
         case INVALIDATE_CINEMAS:
@@ -109,7 +140,18 @@ function loadMovies(state = { }, action) {
         case INVALIDATE_MOVIES:
         case RECEIVE_MOVIES:
         case REQUEST_MOVIES:
-            return Object.assign({}, state, cinemas(state, action));
+            return Object.assign({}, state, movies(state, action));
+        default:
+            return state;
+    }
+}
+
+function loadShowings(state = { }, action) {
+    switch (action.type) {
+        case INVALIDATE_SHOWINGS:
+        case RECEIVE_SHOWINGS:
+        case REQUEST_SHOWINGS:
+            return Object.assign({}, state, showings(state, action));
         default:
             return state;
     }
@@ -140,6 +182,7 @@ const rootReducer = combineReducers({
     changeRegion,
     loadCinemas,
     loadMovies,
+    loadShowings,
     errorMessage,
     router
 });

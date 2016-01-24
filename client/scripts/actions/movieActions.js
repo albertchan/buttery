@@ -64,7 +64,8 @@ function receiveMovies(json, id) {
 }
 
 function fetchMovies(id) {
-    let endpoint = id ? '/api/movie/' + id : '/api/movie';
+    //let endpoint = id ? '/api/movie/' + id : '/api/movie';
+    let endpoint = id ? '/api/movies/' + id : '/api/movies';
 
     return dispatch => {
         dispatch(requestMovies());

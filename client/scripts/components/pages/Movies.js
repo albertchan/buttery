@@ -28,7 +28,7 @@ export default class Movies extends Component {
                     <div>Loading...</div>
                 }
                 {!isFetching && movies && movies.length > 0 &&
-                    <MovieList items={movies} />
+                    <MovieList items={movies} type="main" />
                 }
             </div>
         );

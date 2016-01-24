@@ -27,10 +27,19 @@ const publicRoutes = [
         method: 'GET',
         handler: require('../handlers/getMovie')
     }, {
+        path: '/api/movies',
+        method: 'GET',
+        handler: require('../handlers/getMovies')
+    }, {
         path: '/api/region/{movieId?}',
         method: 'GET',
         handler: require('../handlers/getRegion')
     }
+    //{
+    //    path: '/api/showings/{parts*2}',
+    //    method: 'GET',
+    //    handler: require('../handlers/getShowings')
+    //}
 
 ];
 
