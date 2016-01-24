@@ -29,12 +29,12 @@ export default class MovieList extends React.Component {
                     return (
                         <article key={i}
                                  title={item[locale]}
-                                 className={classNames('by-movie-list_movie flag flag--top', 'cf', 'mvm')}>
+                                 className={classNames('by-movie-list_movie flag flag--top', 'cf', 'mvm-ns', 'mvxs')}>
                             <Link className="flag_img prm" to={link}>
-                                <img className="db" alt={item[locale]} src="http://ia.media-imdb.com/images/M/MV5BMjM2MTQ2MzcxOF5BMl5BanBnXkFtZTgwNzE4NTUyNzE@._V1_UX140_CR0,0,140,209_AL_.jpg"/>
+                                <img className="by-movie-list_movie_thumb db" alt={item[locale]} src="http://ia.media-imdb.com/images/M/MV5BMjM2MTQ2MzcxOF5BMl5BanBnXkFtZTgwNzE4NTUyNzE@._V1_UX140_CR0,0,140,209_AL_.jpg"/>
                             </Link>
                             <div className="flag_body">
-                                <h3>{item[locale]}</h3>
+                                <h4 className="f2">{item[locale]}</h4>
                                 <Dropdown customClass="by-btn-group">
                                     <Link className="by-btn by-btn--gray" to={link} >
                                         <time className="by-btn_time green">24 mins</time>UA Cityplaza

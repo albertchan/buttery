@@ -1,4 +1,15 @@
 .by-movie-list_movie {
   background-color: $color-black;
   color: $color-white;
+  font-size: .75rem;
+}
+
+.by-movie-list_movie_thumb {
+  width: 8em;
+}
+
+@media #{$breakpoint--not-small} {
+  .by-movie-list_movie {
+    font-size: 1rem;
+  }
 }
