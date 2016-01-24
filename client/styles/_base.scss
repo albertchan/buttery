@@ -6,6 +6,9 @@ body {
   background-color: $base--color-bg;
   color: $base--color-text;
 }
+img {
+  max-width: 100%;
+}
 
 // main header
 .by-header {
@@ -48,4 +51,8 @@ $dropdown-z: 999;
     left: auto;
     width: $dropdown-content-w;
   }
+}
+
+// movie list
+.by-movie-list_movie {
 }

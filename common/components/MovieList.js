@@ -21,7 +21,7 @@ export default class MovieList extends React.Component {
         const items = this.props.items !== undefined ? this.props.items : [];
 
         return (
-            <section>
+            <section className="by-movie-list">
                 {items.map(function(item, i) {
                     // item = {id: id, title: 'Movie title', image: thumbnail_url}
                     var link = '/movie/' + item.id;
@@ -29,10 +29,12 @@ export default class MovieList extends React.Component {
                     return (
                         <article key={i}
                             title={item.title}
-                            className={classNames('cf', 'mvm')}
-                            onClick={(i) => this.handleClick.bind(i)}>
-                            <div className="mw-75--ns u-float-left--ns">{item.title}</div>
-                            <div className="u-float-right--ns tc">
+                            className={classNames('by-movie-list_movie flag flag--top', 'cf', 'mvm')}>
+                            <Link className="flag_img prm" to={link}>
+                                <img className="db" alt={item.title} src="http://ia.media-imdb.com/images/M/MV5BMjM2MTQ2MzcxOF5BMl5BanBnXkFtZTgwNzE4NTUyNzE@._V1_UX140_CR0,0,140,209_AL_.jpg"/>
+                            </Link>
+                            <div className="flag_body">
+                                <h3>{item.title}</h3>
                                 <Dropdown customClass="by-btn-group">
                                     <Link className="by-btn by-btn--gray" to={link} >
                                         <time className="by-btn_time green">24 mins</time>UA Cityplaza
