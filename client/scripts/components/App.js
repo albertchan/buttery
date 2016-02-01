@@ -71,6 +71,3 @@ function mapStateToProps(state) {
         inputValue: state.router.location.pathname.substring(1)
     }
 }
-
-// connect without decorator
-//export default connect(mapStateToProps, mapDispatchToProps(dispatch))(App);

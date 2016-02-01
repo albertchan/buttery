@@ -7,8 +7,6 @@ import Root from './components/Root';
 import configureStore from './store/configureStore';
 
 
-const store = configureStore();
-
 if (typeof window !== 'undefined') {
 
     // default locale
@@ -20,6 +18,12 @@ if (typeof window !== 'undefined') {
     } else {
         localStore.set('locale', locale);
     }
+
+    // redux store
+    let initialState = {
+        region: 1
+    };
+    const store = configureStore();
 
     // i18next is async, bootstrap React on callback
     i18n.sync.resStore = {};

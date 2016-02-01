@@ -32,15 +32,15 @@ function requestCinemas(id) {
         };
     } else {
         return {
-            type: REQUEST_CINEMAS,
+            type: REQUEST_CINEMAS
         };
     }
 
 }
 
-function receiveCinema(json, id) {
-    console.log(json, id);
-}
+//function receiveCinema(json, id) {
+//    console.log(json, id);
+//}
 
 function receiveCinemas(json, id) {
     const data = json.data.map(obj => {
