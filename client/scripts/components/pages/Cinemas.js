@@ -15,7 +15,7 @@ export default class Cinemas extends Component {
     }
     
     componentDidMount() {
-        this.props.fetchCinemasIfNeeded();
+        this.props.fetchCinemasIfNeeded(this.props.currentRegion);
     }
     
     render() {
@@ -36,7 +36,7 @@ export default class Cinemas extends Component {
 }
 
 function mapStateToProps(state) {
-    const { loadCinemas } = state;
+    const { currentRegion, loadCinemas } = state;
     const {
         isFetching,
         items: cinemas
@@ -46,6 +46,7 @@ function mapStateToProps(state) {
     };
     
     return {
+        currentRegion,
         cinemas,
         isFetching,
         fetchCinemasIfNeeded

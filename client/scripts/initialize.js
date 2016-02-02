@@ -10,7 +10,7 @@ import configureStore from './store/configureStore';
 if (typeof window !== 'undefined') {
 
     // default locale
-    var locale = 'en';
+    var locale = 'en_us';
 
     // localStorage
     if (localStore.get('locale')) {
@@ -21,9 +21,10 @@ if (typeof window !== 'undefined') {
 
     // redux store
     let initialState = {
-        region: 1
+        currentLocale: locale,
+        currentRegion: 1
     };
-    const store = configureStore();
+    const store = configureStore(initialState);
 
     // i18next is async, bootstrap React on callback
     i18n.sync.resStore = {};

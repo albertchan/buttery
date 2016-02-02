@@ -70,6 +70,14 @@ function changeRegion(state = { }, action) {
     }
 }
 
+function currentLocale(state = { }, action) {
+    return state;
+}
+
+function currentRegion(state = { }, action) {
+    return state;
+}
+
 // Updates error message to notify about the failed fetches.
 function errorMessage(state = null, action) {
     const { type, error } = action;
@@ -83,6 +91,8 @@ function errorMessage(state = null, action) {
 }
 
 const rootReducer = combineReducers({
+    currentLocale,
+    currentRegion,
     changeRegion,
     loadCinemas,
     loadMovies,
