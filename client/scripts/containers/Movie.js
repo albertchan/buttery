@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import Item from '../../../../common/components/Item';
-import { fetchMoviesIfNeeded } from '../../actions/movieActions';
+import Item from '../../../common/components/Item';
+import { fetchMoviesIfNeeded } from '../actions/movieActions';
 
 
 @connect(mapStateToProps, {fetchMoviesIfNeeded})

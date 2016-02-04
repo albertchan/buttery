@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import MovieList from '../../../../common/components/MovieList';
-import { fetchMoviesIfNeeded } from '../../actions/movieActions';
+import MovieList from '../../../common/components/MovieList';
+import { fetchMoviesIfNeeded } from '../actions/movieActions';
 
 
 @connect(mapStateToProps, {fetchMoviesIfNeeded})
@@ -20,6 +20,8 @@ export default class Movies extends Component {
 
     render() {
         const { movies, isFetching } = this.props;
+
+        console.log(this.props);
 
         return (
             <div className="mw8-ns phm center">

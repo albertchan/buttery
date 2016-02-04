@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import ShowingsList from '../../../../common/components/ShowingsList';
-import { fetchShowingsIfNeeded } from '../../actions/showingActions';
+import ShowingsList from '../../../common/components/ShowingsList';
+import { fetchShowingsIfNeeded } from '../actions/showingActions';
 
 
 @connect(mapStateToProps, {fetchShowingsIfNeeded})

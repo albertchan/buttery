@@ -1,16 +1,16 @@
 import React from 'react';
 import { Route } from 'react-router';
-import App from './components/App';
-import * as pages from './components/pages';
+import * as containers from './containers';
 
 
 // page components
 const {
+    App,
     Cinema,
     Cinemas,
     Movie,
     Movies
-} = pages;
+} = containers;
 
 export default (
     <Route path="/" component={App}>

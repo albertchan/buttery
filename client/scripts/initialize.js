@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import i18n from 'i18next-client';
 import * as localStore from 'store';
 import * as path from 'path';
-import Root from './components/Root';
+import Root from './containers/Root';
 import configureStore from './store/configureStore';
 
 
