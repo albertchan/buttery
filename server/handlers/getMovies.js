@@ -1,3 +1,4 @@
+import Sequelize from 'sequelize';
 import * as models from '../models';
 
 
@@ -13,7 +14,11 @@ module.exports = function(request, reply) {
             model: models.MovieShowing,
             order: [
                 ['datetime_showing', 'DESC']
-            ]
+            ],
+            include: [{
+                model: models.Cinema,
+                attributes: ['en_us']
+            }]
         }]
     }).then(function(movies) {
         reply({data: movies});
