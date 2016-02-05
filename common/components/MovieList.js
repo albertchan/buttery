@@ -9,8 +9,6 @@ export default class MovieList extends React.Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {};
     }
 
     handleClick(index, e) {
@@ -18,13 +16,14 @@ export default class MovieList extends React.Component {
     }
 
     render() {
-        const locale = 'en_us',
+        const locale = this.props.locale,
             items = this.props.items !== undefined ? this.props.items : [];
 
         return (
             <section className="by-movie-list">
                 {items.map(function(item, i) {
-                    let link = '/movie/' + item.id;
+                    let link = '/movie/' + item.id,
+                        upcomingShow = item.MovieShowings[0];
 
                     return (
                         <article key={i}
@@ -37,7 +36,7 @@ export default class MovieList extends React.Component {
                                 <h3>{item[locale]}</h3>
                                 <Dropdown customClass="by-btn-group">
                                     <Link className="by-btn by-btn--gray" to={link} >
-                                        <time className="by-btn_time green">24 mins</time>UA Cityplaza
+                                        <time className="by-btn_time green">24 mins</time>{upcomingShow.Cinema[locale]}
                                     </Link>
                                     <button className="by-btn by-btn--gray phm last by-dropdown_trigger">&#9660;</button>
                                     <div className="by-dropdown_content">
@@ -67,5 +66,6 @@ export default class MovieList extends React.Component {
 }
 
 MovieList.propTypes = {
-    items: React.PropTypes.array.isRequired
+    items: React.PropTypes.array.isRequired,
+    locale: React.PropTypes.string.isRequired
 };

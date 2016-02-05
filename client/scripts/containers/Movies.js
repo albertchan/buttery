@@ -20,7 +20,7 @@ export default class Movies extends Component {
     }
 
     render() {
-        const { movies, isFetching } = this.props;
+        const { currentLocale, movies, isFetching } = this.props;
 
         return (
             <div className="mw8-ns phm center">
@@ -29,7 +29,7 @@ export default class Movies extends Component {
                     <div>Loading...</div>
                 }
                 {!isFetching && movies && movies.length > 0 &&
-                    <MovieList items={movies} type="main" />
+                    <MovieList items={movies} locale={currentLocale} type="main" />
                 }
             </div>
         );
@@ -37,7 +37,7 @@ export default class Movies extends Component {
 }
 
 function mapStateToProps(state) {
-    const { currentRegion, loadMovies } = state;
+    const { currentLocale, currentRegion, loadMovies } = state;
     const {
         isFetching,
         items: movies
@@ -47,6 +47,7 @@ function mapStateToProps(state) {
     };
 
     return {
+        currentLocale,
         currentRegion,
         movies,
         isFetching,

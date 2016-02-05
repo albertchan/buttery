@@ -10,11 +10,11 @@ import configureStore from './store/configureStore';
 if (typeof window !== 'undefined') {
 
     // default locale
-    let locale = 'en',
-        localeDB = {
-            "en": "en_us",
-            "zh-HK": "zh_hk"
-        };
+    const mapLocale = {
+        "en": "en_us",
+        "zh-HK": "zh_hk"
+    };
+    let locale = 'en';
 
     // localStorage
     if (localStore.get('locale')) {
@@ -25,7 +25,7 @@ if (typeof window !== 'undefined') {
 
     // redux store
     let initialState = {
-        currentLocale: localeDB[locale],
+        currentLocale: mapLocale[locale],
         currentRegion: 1
     };
     const store = configureStore(initialState);
