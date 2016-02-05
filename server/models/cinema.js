@@ -22,6 +22,7 @@ module.exports = function(sequelize, DataTypes) {
             associate: function(models) {
                 Cinema.belongsTo(models.Chain);
                 Cinema.belongsTo(models.City);
+                Cinema.belongsTo(models.Region, {through: models.City});
                 Cinema.hasMany(models.MovieShowing);
             }
         },

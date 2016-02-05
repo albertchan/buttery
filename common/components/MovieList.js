@@ -47,7 +47,7 @@ export default class MovieList extends React.Component {
                                                 return (
                                                     <li key={showing.id}>
                                                         <a href="javascript:;">
-                                                            <span className="db">UA Cine Times</span>
+                                                            <span className="db">{showing.Cinema[locale]}</span>
                                                             <time className="db yellow f0">{showtime}</time>
                                                         </a>
                                                     </li>

@@ -15,13 +15,12 @@ export default class Movies extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchMoviesIfNeeded();
+        let region = this.props.currentRegion;
+        this.props.fetchMoviesIfNeeded(region);
     }
 
     render() {
         const { movies, isFetching } = this.props;
-
-        console.log(this.props);
 
         return (
             <div className="mw8-ns phm center">
@@ -38,7 +37,7 @@ export default class Movies extends Component {
 }
 
 function mapStateToProps(state) {
-    const { loadMovies } = state;
+    const { currentRegion, loadMovies } = state;
     const {
         isFetching,
         items: movies
@@ -48,6 +47,7 @@ function mapStateToProps(state) {
     };
 
     return {
+        currentRegion,
         movies,
         isFetching,
         fetchMoviesIfNeeded

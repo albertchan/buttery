@@ -42,34 +42,21 @@ function receiveMovies(json, id) {
     if (id) {
         return {
             type: RECEIVE_MOVIES,
-            movie: json.data,
-            id: id
+            movies: json.data
         };
     } else {
-        //const data = json.data.map(obj => {
-        //    const rObj = {};
-        //    rObj[obj.id] = {
-        //        title: obj.title,
-        //        image: obj.image
-        //    };
-        //    return rObj;
-        //});
-        const data = json.data;
-
         return {
             type: RECEIVE_MOVIES,
-            movies: data
+            movies: json.data
         };
     }
 }
 
 function fetchMovies(id) {
-    //let endpoint = id ? '/api/movie/' + id : '/api/movie';
     let endpoint = id ? '/api/movies/' + id : '/api/movies';
 
     return dispatch => {
         dispatch(requestMovies());
-        // return fetch('/api/cinema')
         return fetch(endpoint)
             .then(response => response.json())
             .then(json => dispatch(receiveMovies(json, id)));

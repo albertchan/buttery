@@ -10,7 +10,11 @@ import configureStore from './store/configureStore';
 if (typeof window !== 'undefined') {
 
     // default locale
-    var locale = 'en_us';
+    let locale = 'en',
+        localeDB = {
+            "en": "en_us",
+            "zh-HK": "zh_hk"
+        };
 
     // localStorage
     if (localStore.get('locale')) {
@@ -21,7 +25,7 @@ if (typeof window !== 'undefined') {
 
     // redux store
     let initialState = {
-        currentLocale: locale,
+        currentLocale: localeDB[locale],
         currentRegion: 1
     };
     const store = configureStore(initialState);
@@ -29,7 +33,7 @@ if (typeof window !== 'undefined') {
     // i18next is async, bootstrap React on callback
     i18n.sync.resStore = {};
     i18n.init({
-        lng: 'en',
+        lng: locale,
         fallbackLng: 'en',
         ns: {
             namespaces: ['common'],
@@ -38,7 +42,6 @@ if (typeof window !== 'undefined') {
         resGetPath: path.join('/', 'assets/locales/__lng__/__ns__.json'),
         supportedLngs: ['en', 'zh-HK'],
         preload: [locale]
-        //preload: ['en', 'zh-HK']
         // useLocalStorage: true,
         // localStorageExpirationTime: 86400000 // in ms, default 1 week
     }, function(err, t) {
