@@ -2,9 +2,28 @@ import * as models from '../models';
 
 
 module.exports = function(request, reply) {
-    const locale = 'en_us';
-    let parts = request.params.parts.split('/');
+    const movieId = request.params.movieId;
 
-    console.log(parts);
+    if (movieId) {
 
+        models.MovieShowing.findAll({
+            where: {
+                id: movieId
+            },
+            order: [
+                ['datetime_showing', 'ASC']
+            ],
+            include: [{
+                model: models.Cinema,
+                attributes: ['en_us', 'zh_hk']
+            }]
+
+        }).then(function (showings) {
+
+            // do stuff
+            reply({data: showings});
+
+        });
+
+    }
 };

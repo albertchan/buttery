@@ -1,13 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Item from '../../../common/components/Item';
-import { fetchMoviesIfNeeded } from '../actions/movieActions';
+import Timeline from '../../../common/components/Timeline';
+import { fetchMovieIfNeeded } from '../actions/movieActions';
 
 
-@connect(mapStateToProps, {fetchMoviesIfNeeded})
+@connect(mapStateToProps, {fetchMovieIfNeeded})
 export default class Movie extends Component {
     static propTypes = {
-        fetchMoviesIfNeeded: PropTypes.func.isRequired
+        fetchMovieIfNeeded: PropTypes.func.isRequired
     };
 
     constructor(props) {
@@ -16,12 +17,12 @@ export default class Movie extends Component {
 
     componentDidMount() {
         if (this.props.movieId) {
-            this.props.fetchMoviesIfNeeded(this.props.movieId);
+            this.props.fetchMovieIfNeeded(this.props.movieId);
         }
     }
 
     render() {
-        const { movie, isFetching } = this.props;
+        const { currentLocale, currentRegion, movie, isFetching } = this.props;
         console.log(movie);
 
         return (
@@ -32,7 +33,7 @@ export default class Movie extends Component {
                 {!isFetching && movie &&
                 <div>
                     <h2>{movie.title}</h2>
-                    <p></p>
+                    <Timeline items={movie} locale={this.props.currentLocale} />
                 </div>
                 }
             </div>
@@ -42,23 +43,21 @@ export default class Movie extends Component {
 
 function mapStateToProps(state) {
     const { movieId } = state.router.params;
-    const { loadMovies } = state;
+    const { currentLocale, currentRegion, loadMovie } = state;
     const {
         isFetching,
         item: movie
-        } = loadMovies || {
+        } = loadMovie || {
         isFetching: true,
         item: {}
     };
 
     return {
+        currentLocale,
+        currentRegion,
         movie,
         movieId,
         isFetching,
-        fetchMoviesIfNeeded
+        fetchMovieIfNeeded
     };
 }
-
-export default connect(mapStateToProps, {
-    fetchMoviesIfNeeded
-})(Movie);

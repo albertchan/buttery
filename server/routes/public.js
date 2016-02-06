@@ -23,7 +23,7 @@ const publicRoutes = [
         method: 'GET',
         handler: require('../handlers/getCinemas')
     }, {
-        path: '/api/movie/{movieId?}',
+        path: '/api/movie/{movieId}',
         method: 'GET',
         handler: require('../handlers/getMovie')
     }, {
@@ -34,12 +34,11 @@ const publicRoutes = [
         path: '/api/region/{movieId?}',
         method: 'GET',
         handler: require('../handlers/getRegion')
+    }, {
+        path: '/api/showings/{movieId?}',
+        method: 'GET',
+        handler: require('../handlers/getShowings')
     }
-    //{
-    //    path: '/api/showings/{parts*2}',
-    //    method: 'GET',
-    //    handler: require('../handlers/getShowings')
-    //}
 
 ];
 

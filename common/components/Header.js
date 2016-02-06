@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { render } from 'react-dom';
 import { Link } from 'react-router';
-import i18n from 'i18next-client';
+import i18n from 'i18next';
+//import i18n from 'i18next-client';
 import classNames from 'classnames';
 import Dropdown from './Dropdown';
 import SelectRegion from './SelectRegion';

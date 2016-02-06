@@ -3,7 +3,19 @@ import * as models from '../models';
 
 module.exports = function(request, reply) {
     let regionId = request.params.regionId,
-        include = regionId ? {model: models.City, where: {region_id: regionId}} : {model: models.City};
+        include = {};
+        //include = regionId ? {model: models.City, where: {region_id: regionId}} : {model: models.City};
+
+    if (regionId) {
+        include = {
+            model: models.City,
+            where: {region_id: regionId}
+        };
+    } else {
+        {
+            model: models.City
+        }
+    }
 
     models.Cinema.findAll({
         include: [include]

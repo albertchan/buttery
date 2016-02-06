@@ -9,6 +9,33 @@ import {
 } from '../actions/movieActions';
 
 
+export function movie(state = {
+    isFetching: false,
+    didInvalidate: false,
+    item: []
+}, action) {
+    switch (action.type) {
+        // movie related
+        case INVALIDATE_MOVIE:
+            return Object.assign({}, state, {
+                didInvalidate: true
+            });
+        case REQUEST_MOVIE:
+            return Object.assign({}, state, {
+                isFetching: true,
+                didInvalidate: false
+            });
+        case RECEIVE_MOVIE:
+            return Object.assign({}, state, {
+                isFetching: false,
+                didInvalidate: false,
+                item: action.movie
+            });
+        default:
+            return state;
+    }
+}
+
 export function movies(state = {
     isFetching: false,
     didInvalidate: false,
@@ -39,6 +66,17 @@ export function movies(state = {
                     items: action.movies
                 });
             }
+        default:
+            return state;
+    }
+}
+
+export function loadMovie(state = { }, action) {
+    switch (action.type) {
+        case INVALIDATE_MOVIE:
+        case RECEIVE_MOVIE:
+        case REQUEST_MOVIE:
+            return Object.assign({}, state, movie(state, action));
         default:
             return state;
     }
