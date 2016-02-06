@@ -22,8 +22,6 @@ export default class Movie extends Component {
 
     render() {
         const { movie, isFetching } = this.props;
-        console.log(movie);
-
         return (
             <div>
                 {isFetching &&
