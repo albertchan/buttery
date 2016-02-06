@@ -23,16 +23,52 @@ export default class Movie extends Component {
     render() {
         const { movie, isFetching } = this.props;
         return (
-            <div>
+            <div className="by-movie">
                 {isFetching &&
                 <div>Loading...</div>
                 }
                 {!isFetching && movie &&
-                <div>
-                    <h2>{movie.title}</h2>
-                    <p></p>
-                </div>
+                <header className="flag flag--top">
+                    <div className="flag_img">
+                        <img className="db" src="http://ia.media-imdb.com/images/M/MV5BMjM2MTQ2MzcxOF5BMl5BanBnXkFtZTgwNzE4NTUyNzE@._V1_UX140_CR0,0,140,209_AL_.jpg"/>
+                    </div>
+                    <div className="flag_body">
+                        <h2>{movie.title}</h2>
+                        <p></p>
+                    </div>
+                </header>
                 }
+                <header className="by-movie_header flag flag--top">
+                    <div className="flag_img prm">
+                        <img className="by-movie_thumb db" src="http://ia.media-imdb.com/images/M/MV5BMjM2MTQ2MzcxOF5BMl5BanBnXkFtZTgwNzE4NTUyNzE@._V1_UX140_CR0,0,140,209_AL_.jpg"/>
+                    </div>
+                    <div className="flag_body">
+                        <h2>Star Wars: The Force Awakens</h2>
+                        <p></p>
+                    </div>
+                </header>
+                <section className="by-movie_showtimes">
+                    <ul className="by-showtimes mtn">
+                        <li className="by-showtimes_legend">17:00</li>
+                        <li className="by-showtime by-showtime--medium">
+                            <time className="by-showtime_time">17:20</time>
+                            <span className="by-showtime_cinema">UA Cine Times</span>
+                        </li>
+                        <li className="by-showtime by-showtime--high">
+                            <time className="by-showtime_time">17:50</time>
+                            <span className="by-showtime_cinema">UA Cityplaza</span>
+                        </li>
+                        <li className="by-showtimes_legend">18:00</li>
+                        <li className="by-showtime by-showtime--low">
+                            <time className="by-showtime_time">18:20</time>
+                            <span className="by-showtime_cinema">UA Cine Times</span>
+                        </li>
+                        <li className="by-showtime by-showtime--low">
+                            <time className="by-showtime_time">18:50</time>
+                            <span className="by-showtime_cinema">UA Cityplaza</span>
+                        </li>
+                    </ul>
+                </section>
             </div>
         );
     }

@@ -1,0 +1,62 @@
+.by-movie {
+  font-size: .75rem;
+}
+
+.by-movie_thumb{
+  width: 6em;
+}
+
+@media #{$breakpoint--not-small} {
+  .by-movie {
+    font-size: 1rem;
+  }
+}
+
+.by-movie_showtimes {
+  background-color: $color-black;
+  color: $color-white;
+}
+
+// Showtime timeline css
+.by-showtimes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+// individual showtime
+.by-showtime {
+  font-size: 1.4em;
+  border-left: 1px solid $color-gray;
+  padding: 0.5rem 1rem;
+}
+.by-showtime--high {
+  border-left-color: $color-red;
+}
+.by-showtime--medium {
+  border-left-color: $color-yellow;
+}
+.by-showtime--low {
+  border-left-color: $color-green;
+}
+.by-showtime_time {
+  margin-right: 1rem;
+}
+.by-showtimes_legend {
+  margin-left: -1rem;
+  padding: 1rem 0;
+  color: $color-gray;
+}
+// .by-showtimes_legend:before {
+//   content: "";
+//   display: inline-block;
+//   position: relative;
+//   border: 1px solid $color-gray;
+//   width: .8rem;
+//   height: .8rem;
+//   left: -.8rem;
+//   border-radius: .8rem;
+//   vertical-align: baseline;
+// }
