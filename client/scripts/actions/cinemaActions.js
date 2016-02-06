@@ -38,10 +38,6 @@ function requestCinemas(id) {
 
 }
 
-//function receiveCinema(json, id) {
-//    console.log(json, id);
-//}
-
 function receiveCinemas(json, id) {
     const data = json.data.map(obj => {
         const rObj = {};

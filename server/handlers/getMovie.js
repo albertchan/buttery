@@ -2,10 +2,33 @@ import * as models from '../models';
 
 
 module.exports = function(request, reply) {
-    const locale = 'en_us';
-    let movieId = request.params.movieId;
+    const movieId = request.params.movieId;
 
     if (movieId) {
+
+        models.MovieShowing.findAll({
+            where: {
+                movie_id: movieId
+            },
+            order: [
+                ['datetime_showing', 'ASC']
+            ],
+            include: [{
+                model: models.Cinema,
+                attributes: ['en_us', 'zh_hk']
+            }]
+
+        }).then(function(showings) {
+
+            // do stuff
+            reply({data: showings});
+
+        });
+
+    }
+
+    /*if (movieId) {
+        const locale = 'en_us';
 
         models.Movie.find({
             where: {id: movieId},
@@ -48,26 +71,6 @@ module.exports = function(request, reply) {
             });
         });
 
-    } else {
-
-        models.Movie.findAll({
-            where: {
-                active: true
-            }
-        }).then(function(movies) {
-            var arrayMovie = [];
-
-            movies.forEach(function(movie) {
-                arrayMovie.push({
-                    id: movie.id,
-                    title: movie[locale],
-                    image: movie.thumbnail_url
-                });
-            });
-
-            reply({data: arrayMovie});
-        });
-
-    }
+    }*/
 
 };

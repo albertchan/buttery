@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/jakechan/buttery.git"
+    "url": "git+ssh://git@github.com/albertchan/buttery.git"
   },
   "keywords": [
     "flux",
@@ -20,12 +20,12 @@
     "nodejs",
     "react"
   ],
-  "author": "jake Chan",
+  "author": "Albert Chan",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/jakechan/buttery/issues"
+    "url": "https://github.com/albertchan/buttery/issues"
   },
-  "homepage": "https://github.com/jakechan/buttery#readme",
+  "homepage": "https://github.com/albertchan/buttery#readme",
   "dependencies": {
     "bluebird": "^2.10.2",
     "bole": "~2.0.0",
@@ -38,12 +38,13 @@
     "hapi-react-views": "~4.x.x",
     "history": "~1.x.x",
     "i18next": "~2.x.x",
-    "i18next-client": "~1.x.x",
+    "i18next-xhr-backend": "~0.x.x",
     "inert": "^3.x.x",
     "isomorphic-fetch": "^2.x.x",
     "joi": "^6.x.x",
     "keymirror": "~0.x.x",
-    "lodash": "~3.x.x",
+    "lodash": "~4.x.x",
+    "moment": "~2.x.x",
     "object-assign": "~4.x.x",
     "pg": "^4.x.x",
     "pg-hstore": "^2.x.x",
@@ -67,7 +68,7 @@
     "gulp-autoprefixer": "^3.1.0",
     "gulp-if": "~1.x.x",
     "gulp-load-plugins": "~1.x.x",
-    "gulp-minify-css": "~1.x.x",
+    "gulp-cssnano": "~2.x.x",
     "gulp-notify": "~2.x.x",
     "gulp-plumber": "~1.x.x",
     "gulp-rename": "~1.x.x",

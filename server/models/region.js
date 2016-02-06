@@ -16,7 +16,6 @@ module.exports = function(sequelize, DataTypes) {
                     }
                 });
                 Region.hasMany(models.City);
-                Region.hasMany(models.Cinema);
             }
         },
         tableName: 'regions',

@@ -8,8 +8,8 @@ module.exports = [
         register: require('hapi-i18next'),
         options: {
             i18nextOptions: {
-                lng: 'en',
-                fallbackLng: 'en',
+                lng: 'en-US',
+                fallbackLng: 'en-US',
                 detectLngFromQueryString: 'lang',
                 detectLngFromPath: 0,
                 ns: {
@@ -17,8 +17,8 @@ module.exports = [
                     defaultNs: 'common'
                 },
                 resSetPath: '../../locales/__lng__/__ns__.json',
-                supportedLngs: ['en', 'zh-HK'],
-                preload: ['en', 'zh-HK']
+                supportedLngs: ['en-US', 'zh-HK'],
+                preload: ['en-US', 'zh-HK']
             }
         }
     }

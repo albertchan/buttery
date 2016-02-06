@@ -2,7 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import { render } from 'react-dom';
 import { connect } from 'react-redux';
 import { pushState } from 'redux-router';
-import i18n from 'i18next-client';
+import i18n from 'i18next';
+//import i18n from 'i18next-client';
 import { changeRegion, resetErrorMessage } from '../actions';
 import { fetchCinemasIfNeeded } from '../actions/cinemaActions';
 import { fetchMoviesIfNeeded } from '../actions/movieActions';
@@ -56,12 +57,8 @@ export default class App extends Component {
         const { children, inputValue } = this.props;
 
         var title = i18n.t('app.name'),
-            arrayMenu = i18n.t('menu', {returnObjectTrees: true}),
-            arrayRegion = [
-                {id: 1, name: 'Hong Kong'},
-                {id: 2, name: 'Kownloon'},
-                {id: 3, name: 'New Territories'}
-            ];
+            arrayMenu = i18n.t('menu', {returnObjects: true}),
+            arrayRegion = i18n.t('region', {returnObjects: true});
 
         return (
             <div>
