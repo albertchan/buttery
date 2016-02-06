@@ -38,6 +38,7 @@
     "hapi-react-views": "~4.x.x",
     "history": "~1.x.x",
     "i18next": "~2.x.x",
+    "i18next-client": "~1.x.x",
     "inert": "^3.x.x",
     "isomorphic-fetch": "^2.x.x",
     "joi": "^6.x.x",
