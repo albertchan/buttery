@@ -16,6 +16,7 @@ module.exports = function(sequelize, DataTypes) {
                     }
                 });
                 Region.hasMany(models.City);
+                Region.hasMany(models.Cinema);
             }
         },
         tableName: 'regions',
@@ -27,28 +28,3 @@ module.exports = function(sequelize, DataTypes) {
 
     return Region;
 };
-
-
-//"use strict";
-//
-//module.exports = function(sequelize, DataTypes) {
-//    var Region = sequelize.define("Region", {
-//        //id: {type: DataTypes.BIGINT, primaryKey: true},
-//        en_us: DataTypes.STRING,
-//        zh_cn: DataTypes.STRING,
-//        zh_hk: DataTypes.STRING
-//    }, {
-//        classMethods: {
-//            associate: function(models) {
-//                Region.hasMany(models.City)
-//            }
-//        },
-//        tableName: 'regions',
-//        createdAt: false,
-//        deletedAt: false,
-//        updatedAt: false,
-//        underscored: true
-//    });
-//
-//    return Region;
-//};

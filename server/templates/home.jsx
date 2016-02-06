@@ -17,12 +17,6 @@ var Home = React.createClass({
         };
     },
 
-    changeLanguage: function(lng) {
-        this.setState({
-            locale: lng
-        });
-    },
-
     render: function() {
         var menuArray = this.props.i18n.translateWithCache('menu', this.state.locale, {returnObjectTrees: true}),
             title = this.props.i18n.translateWithCache('app.name');

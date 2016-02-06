@@ -5,18 +5,26 @@ import { pushState } from 'redux-router';
 import i18n from 'i18next-client';
 import { changeRegion, resetErrorMessage } from '../actions';
 import { fetchCinemasIfNeeded } from '../actions/cinemaActions';
+import { fetchMoviesIfNeeded } from '../actions/movieActions';
 
 import Header from '../../../common/components/Header';
 import Menu from '../../../common/components/Menu';
 
 
 // connect with decorator
-@connect(mapStateToProps, {changeRegion, fetchCinemasIfNeeded, resetErrorMessage, pushState})
+@connect(mapStateToProps, {
+    changeRegion,
+    fetchCinemasIfNeeded,
+    fetchMoviesIfNeeded,
+    resetErrorMessage,
+    pushState
+})
 export default class App extends Component {
     static propTypes = {
         errorMessage: PropTypes.string,
         changeRegion: PropTypes.func.isRequired,
         fetchCinemasIfNeeded: PropTypes.func.isRequired,
+        fetchMoviesIfNeeded: PropTypes.func.isRequired,
         resetErrorMessage: PropTypes.func.isRequired,
         pushState: PropTypes.func.isRequired,
         inputValue: PropTypes.string.isRequired,
@@ -28,11 +36,19 @@ export default class App extends Component {
     }
 
     changeRegion(id) {
-        let routes = this.props.inputValue.split('/');
+        let routes = this.props.inputValue.split('/'),
+            route = routes[0];
         this.props.changeRegion(id);
 
-        if (routes[0] === 'cinemas') {
-            this.props.fetchCinemasIfNeeded(id);
+        switch(route) {
+            case 'cinemas':
+                this.props.fetchCinemasIfNeeded(id);
+                break;
+            case 'movies':
+                this.props.fetchMoviesIfNeeded(id);
+                break;
+            default:
+                break;
         }
     }
 
@@ -68,9 +84,7 @@ function mapStateToProps(state) {
         changeRegion: state.changeRegion,
         errorMessage: state.errorMessage,
         fetchCinemasIfNeeded: state.fetchCinemasIfNeeded,
+        fetchMoviesIfNeeded: state.fetchMoviesIfNeeded,
         inputValue: state.router.location.pathname.substring(1)
     }
 }
-
-// connect without decorator
-//export default connect(mapStateToProps, mapDispatchToProps(dispatch))(App);

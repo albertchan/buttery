@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import List from '../../../../common/components/List';
-import { fetchCinemasIfNeeded } from '../../actions/cinemaActions';
+import Item from '../../../common/components/Item';
+import { fetchCinemasIfNeeded } from '../actions/cinemaActions';
 
 
 @connect(mapStateToProps, {fetchCinemasIfNeeded})
-export default class Cinemas extends Component {
+export default class Cinema extends Component {
     static propTypes = {
         fetchCinemasIfNeeded: PropTypes.func.isRequired
     };
@@ -15,20 +15,24 @@ export default class Cinemas extends Component {
     }
     
     componentDidMount() {
-        this.props.fetchCinemasIfNeeded();
+        if (this.props.cinemaId) {
+            this.props.fetchCinemasIfNeeded(this.props.cinemaId);
+        }
     }
     
     render() {
-        const { cinemas, isFetching } = this.props;
+        const { cinema, isFetching } = this.props;
         
         return (
-            <div className="mw6-ns center">
-                <h2>Cinemas</h2>
+            <div>
                 {isFetching &&
                     <div>Loading...</div>
                 }
-                {!isFetching && cinemas && cinemas.length > 0 &&
-                    <List items={cinemas} />
+                {!isFetching && cinema &&
+                    <div>
+                        <h2>{cinema.name}</h2>
+                        <p>{cinema.address}</p>
+                    </div>
                 }
             </div>
         );
@@ -36,17 +40,19 @@ export default class Cinemas extends Component {
 }
 
 function mapStateToProps(state) {
+    const { cinemaId } = state.router.params;
     const { loadCinemas } = state;
     const {
         isFetching,
-        items: cinemas
+        item: cinema
     } = loadCinemas || {
         isFetching: true,
-        items: []
+        item: {}
     };
     
     return {
-        cinemas,
+        cinema,
+        cinemaId,
         isFetching,
         fetchCinemasIfNeeded
     };

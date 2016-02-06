@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import MovieList from '../../../../common/components/MovieList';
-import { fetchMoviesIfNeeded } from '../../actions/movieActions';
+import MovieList from '../../../common/components/MovieList';
+import { fetchMoviesIfNeeded } from '../actions/movieActions';
 
 
 @connect(mapStateToProps, {fetchMoviesIfNeeded})
@@ -15,11 +15,12 @@ export default class Movies extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchMoviesIfNeeded();
+        let region = this.props.currentRegion;
+        this.props.fetchMoviesIfNeeded(region);
     }
 
     render() {
-        const { movies, isFetching } = this.props;
+        const { currentLocale, movies, isFetching } = this.props;
 
         return (
             <div className="mw8-ns phm-ns center">
@@ -27,7 +28,7 @@ export default class Movies extends Component {
                     <div>Loading...</div>
                 }
                 {!isFetching && movies && movies.length > 0 &&
-                    <MovieList items={movies} type="main" />
+                    <MovieList items={movies} locale={currentLocale} type="main" />
                 }
             </div>
         );
@@ -35,7 +36,7 @@ export default class Movies extends Component {
 }
 
 function mapStateToProps(state) {
-    const { loadMovies } = state;
+    const { currentLocale, currentRegion, loadMovies } = state;
     const {
         isFetching,
         items: movies
@@ -45,6 +46,8 @@ function mapStateToProps(state) {
     };
 
     return {
+        currentLocale,
+        currentRegion,
         movies,
         isFetching,
         fetchMoviesIfNeeded

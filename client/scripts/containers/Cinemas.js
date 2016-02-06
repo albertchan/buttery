@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import Item from '../../../../common/components/Item';
-import { fetchCinemasIfNeeded } from '../../actions/cinemaActions';
+import List from '../../../common/components/List';
+import { fetchCinemasIfNeeded } from '../actions/cinemaActions';
 
 
 @connect(mapStateToProps, {fetchCinemasIfNeeded})
-export default class Cinema extends Component {
+export default class Cinemas extends Component {
     static propTypes = {
         fetchCinemasIfNeeded: PropTypes.func.isRequired
     };
@@ -15,24 +15,20 @@ export default class Cinema extends Component {
     }
     
     componentDidMount() {
-        if (this.props.cinemaId) {
-            this.props.fetchCinemasIfNeeded(this.props.cinemaId);
-        }
+        this.props.fetchCinemasIfNeeded(this.props.currentRegion);
     }
     
     render() {
-        const { cinema, isFetching } = this.props;
+        const { cinemas, isFetching } = this.props;
         
         return (
-            <div>
+            <div className="mw6-ns center">
+                <h2>Cinemas</h2>
                 {isFetching &&
                     <div>Loading...</div>
                 }
-                {!isFetching && cinema &&
-                    <div>
-                        <h2>{cinema.name}</h2>
-                        <p>{cinema.address}</p>
-                    </div>
+                {!isFetching && cinemas && cinemas.length > 0 &&
+                    <List items={cinemas} />
                 }
             </div>
         );
@@ -40,19 +36,18 @@ export default class Cinema extends Component {
 }
 
 function mapStateToProps(state) {
-    const { cinemaId } = state.router.params;
-    const { loadCinemas } = state;
+    const { currentRegion, loadCinemas } = state;
     const {
         isFetching,
-        item: cinema
+        items: cinemas
     } = loadCinemas || {
         isFetching: true,
-        item: {}
+        items: []
     };
     
     return {
-        cinema,
-        cinemaId,
+        currentRegion,
+        cinemas,
         isFetching,
         fetchCinemasIfNeeded
     };
