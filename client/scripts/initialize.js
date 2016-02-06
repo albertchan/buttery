@@ -1,6 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import i18n from 'i18next-client';
+//import i18n from 'i18next-client';
+import i18next from 'i18next';
+import XHR from 'i18next-xhr-backend';
 import * as localStore from 'store';
 import * as path from 'path';
 import Root from './containers/Root';
@@ -11,10 +13,10 @@ if (typeof window !== 'undefined') {
 
     // default locale
     const mapLocale = {
-        "en": "en_us",
+        "en-US": "en_us",
         "zh-HK": "zh_hk"
     };
-    let locale = 'en';
+    let locale = 'en-US';
 
     // localStorage
     if (localStore.get('locale')) {
@@ -30,27 +32,30 @@ if (typeof window !== 'undefined') {
     };
     const store = configureStore(initialState);
 
-    // i18next is async, bootstrap React on callback
-    i18n.sync.resStore = {};
-    i18n.init({
+    // i18next options
+    const i18nextOptions = {
         lng: locale,
-        fallbackLng: 'en',
-        ns: {
-            namespaces: ['common'],
-            defaultNs: 'common'
+        fallbackLng: 'en-US',
+        load: ['en-US', 'zh-HK'],
+        whitelist: ['en-US', 'zh-HK'],
+        ns: 'common',
+        defaultNS: 'common',
+        backend: {
+            crossDomain: false,
+            loadPath: '/assets/locales/{{lng}}/{{ns}}.json'
         },
-        resGetPath: path.join('/', 'assets/locales/__lng__/__ns__.json'),
-        supportedLngs: ['en', 'zh-HK'],
         preload: [locale]
-        // useLocalStorage: true,
-        // localStorageExpirationTime: 86400000 // in ms, default 1 week
-    }, function(err, t) {
+    };
 
-        render(
-            <Root store={store} />,
-            document.getElementById('app')
-        );
-
-    });
+    // i18next is async, bootstrap React on callback
+    i18next
+        .use(XHR)
+        .init(i18nextOptions, (err, t) => {
+            render(
+                <Root store={store}/>,
+                document.getElementById('app')
+            );
+        }
+    );
 
 }

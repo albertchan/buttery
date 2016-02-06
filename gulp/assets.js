@@ -31,7 +31,7 @@ gulp.task('styles', function() {
         .pipe(plugin.sass().on('error', plugin.sass.logError))
         .pipe(plugin.autoprefixer())
         .pipe(plugin.sourcemaps.write())
-        .pipe(plugin.if(RELEASE, plugin.minifyCss()))
+        .pipe(plugin.if(RELEASE, plugin.cssnano()))
         .pipe(plugin.if(RELEASE, plugin.rename(function(path) {
             path.basename += '.min';
         })))

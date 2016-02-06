@@ -7,11 +7,10 @@
         {"id": "cinemas", "name": "Cinemas"},
         {"id": "movies", "name": "Movies"}
     ],
-    "location": {
-        "region": [
-            {"name": "Hong Kong", "abbr": "HK"},
-            {"name": "Kowloon", "abbr": "KLW"},
-            {"name": "New Territories", "abbr": "NT"}
-        ]
-    }
+    "region": [
+        {"id": 1, "name": "Hong Kong", "abbr": "HK"},
+        {"id": 2, "name": "Kowloon", "abbr": "KLW"},
+        {"id": 3, "name": "New Territories", "abbr": "NT"}
+    ]
+
 }
