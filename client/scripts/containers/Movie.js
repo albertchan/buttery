@@ -23,7 +23,7 @@ export default class Movie extends Component {
     render() {
         const { movie, isFetching } = this.props;
         return (
-            <div className="by-movie flex flex-row-ns flex-col">
+            <div className="by-movie flex flex-row-ns flex-col mw8-l center">
                 {isFetching &&
                 <div>Loading...</div>
                 }
@@ -38,7 +38,7 @@ export default class Movie extends Component {
                     </div>
                 </header>
                 }
-                <header className="by-movie_header flex_item w6-ns">
+                <header className="by-movie_header flex_item w5-ns">
                     <div className="flag flag--top db-ns pam-ns">
                         <div className="flag_img prm db-ns pan-ns">
                             <img className="by-movie_thumb db" src="http://ia.media-imdb.com/images/M/MV5BMjM2MTQ2MzcxOF5BMl5BanBnXkFtZTgwNzE4NTUyNzE@._V1_UX140_CR0,0,140,209_AL_.jpg"/>

@@ -14,6 +14,19 @@
     width: 100%;
   }
 }
+@media #{$breakpoint--large} {
+  // split-bg
+  .by-movie:before {
+    content: "";
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: $color-black;
+    z-index: -1;
+  }
+}
 
 .by-movie_showtimes {
   background-color: $color-black;
@@ -25,15 +38,15 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  padding-left: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-left: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 // individual showtime
 .by-showtime {
   font-size: 1.4em;
   border-left: 1px solid $color-gray;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
 }
 .by-showtime--high {
   border-left-color: $color-red;
@@ -45,11 +58,11 @@
   border-left-color: $color-green;
 }
 .by-showtime_time {
-  margin-right: 1rem;
+  margin-right: 1em;
 }
 .by-showtimes_legend {
-  margin-left: -1rem;
-  padding: 1rem 0;
+  margin-left: -1em;
+  padding: 1em 0;
   color: $color-gray;
 }
 .by-showtimes_legend:first-child {
