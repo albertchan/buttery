@@ -23,7 +23,7 @@ export default class Movie extends Component {
     render() {
         const { movie, isFetching } = this.props;
         return (
-            <div className="by-movie">
+            <div className="by-movie flex flex-row-ns flex-col">
                 {isFetching &&
                 <div>Loading...</div>
                 }
@@ -38,16 +38,18 @@ export default class Movie extends Component {
                     </div>
                 </header>
                 }
-                <header className="by-movie_header flag flag--top">
-                    <div className="flag_img prm">
-                        <img className="by-movie_thumb db" src="http://ia.media-imdb.com/images/M/MV5BMjM2MTQ2MzcxOF5BMl5BanBnXkFtZTgwNzE4NTUyNzE@._V1_UX140_CR0,0,140,209_AL_.jpg"/>
-                    </div>
-                    <div className="flag_body">
-                        <h2>Star Wars: The Force Awakens</h2>
-                        <p></p>
+                <header className="by-movie_header flex_item w6-ns">
+                    <div className="flag flag--top db-ns pam-ns">
+                        <div className="flag_img prm db-ns pan-ns">
+                            <img className="by-movie_thumb db" src="http://ia.media-imdb.com/images/M/MV5BMjM2MTQ2MzcxOF5BMl5BanBnXkFtZTgwNzE4NTUyNzE@._V1_UX140_CR0,0,140,209_AL_.jpg"/>
+                        </div>
+                        <div className="flag_body db-ns">
+                            <h2>Star Wars: The Force Awakens</h2>
+                            <p></p>
+                        </div>
                     </div>
                 </header>
-                <section className="by-movie_showtimes">
+                <section className="by-movie_showtimes flex_item w-100">
                     <ul className="by-showtimes mtn">
                         <li className="by-showtimes_legend">17:00</li>
                         <li className="by-showtime by-showtime--medium">

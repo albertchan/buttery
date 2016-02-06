@@ -1,0 +1,26 @@
+.flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex_item {
+  flex: 0 1 auto;
+}
+@media #{$breakpoint--not-small} {
+  .flex-ns {
+    display: flex;
+  }
+  .flex-row-ns {
+    flex-direction: row;
+  }
+  .flex-col-ns {
+    flex-direction: column;
+  }
+  .flex_item-ns {
+    flex: 0 1 auto;
+  }
+}
