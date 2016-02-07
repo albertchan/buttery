@@ -33,7 +33,7 @@ export default class SelectRegion extends Component {
             <Dropdown>
                 <a className="by-dropdown_trigger" href="javascript:;">{items[this.state.selected]}</a>
                 <div className="by-dropdown_content">
-                    <ul className="by-menu by-list--vertical">
+                    <ul className="by-list by-list--vertical">
                         {this.props.items.map(function(item, i) {
                             return (
                                 <li key={item.id} onClick={this.handleClick.bind(this, item.id)}>

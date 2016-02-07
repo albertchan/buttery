@@ -28,7 +28,7 @@ $btn--color-secondary: $color-gray;
   &,
   &:visited,
   &:hover {
-    color: $color-white;
+    // color: $color-white;
     opacity: 1;
   }
 }
@@ -58,7 +58,7 @@ $btn--color-secondary: $color-gray;
 // primary
 .by-btn--buttery {
   border-color: $color-buttery;
-  color: $color-white !important; //overwrite links
+  // color: $color-white !important; //overwrite links
 }
 
 .by-btn--buttery.hover,
@@ -69,7 +69,7 @@ $btn--color-secondary: $color-gray;
 // secondary
 .by-btn--gray {
   border-color: $color-gray;
-  color: $color-white !important; //overwrite links
+  // color: $color-white !important; //overwrite links
 }
 
 .by-btn--gray.hover,
@@ -85,12 +85,15 @@ $btn--color-secondary: $color-gray;
 }
 
 .by-btn-group {
+  display: table;
   white-space: nowrap;
   .by-btn {
+    display: table-cell;
     border-right-width: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
+  .by-btn:last-child,
   .by-btn.last {
     border-right-width: 2px;
     border-top-right-radius: 2px;

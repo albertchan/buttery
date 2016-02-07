@@ -56,7 +56,7 @@ export default class Dropdown extends React.Component {
 
     _position() {
         if(this._content.getBoundingClientRect().right > (window.innerWidth || document.documentElement.clientWidt)) {
-            this._content.className += ' right-0';
+            this._content.className += ' by-dropdown_content--right';
         }
     }
 
