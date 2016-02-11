@@ -31,6 +31,7 @@
     "bole": "~2.0.0",
     "browserify": "~11.x.x",
     "classnames": "~2.x.x",
+    "color-thief": "~2.x.x",
     "dotenv": "^1.2.0",
     "es6-promise": "~3.x.x",
     "hapi": "^11.x.x",

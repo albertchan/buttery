@@ -1,16 +1,53 @@
 {
-    "app": {
-        "name": "Buttery",
-        "tagline": "Movie information, show times, and more!"
-    },
-    "menu": [
-        {"id": "cinemas", "name": "Cinemas"},
-        {"id": "movies", "name": "Movies"}
-    ],
-    "region": [
-        {"id": 1, "name": "Hong Kong", "abbr": "HK"},
-        {"id": 2, "name": "Kowloon", "abbr": "KLW"},
-        {"id": 3, "name": "New Territories", "abbr": "NT"}
-    ]
+  "app": {
+    "name": "Buttery",
+    "tagline": "Movie information, show times, and more!"
+  },
 
+  "menu": [
+    {
+      "id": "cinemas",
+      "name": "Cinemas"
+    },
+    {
+      "id": "movies",
+      "name": "Movies"
+    }
+  ],
+
+  "header": {
+    "category": "Category",
+    "cinemas": "Cinemas",
+    "date": "By Date",
+    "region": "By Region",
+    "movies": "Movies"
+  },
+
+  "region": [
+    {
+      "id": 1,
+      "name": "Hong Kong",
+      "abbr": "HK"
+    },
+    {
+      "id": 2,
+      "name": "Kowloon",
+      "abbr": "KLW"
+    },
+    {
+      "id": 3,
+      "name": "New Territories",
+      "abbr": "NT"
+    }
+  ],
+
+  "article": {
+    "cast": "Cast",
+    "director": "Director",
+    "genre": "Genre",
+    "language": "Language",
+    "plot": "Plot",
+    "release": "Release",
+    "runtime": "Runtime"
+  }
 }

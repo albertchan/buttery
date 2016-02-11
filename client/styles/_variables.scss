@@ -1,20 +1,21 @@
 // Colors
-$color-buttery: #f7d969;
+$color-buttery:           #f1d6c5; // #faedb1;
+$color-buttery-inverse:   #413535; // #413535
+$color-highlight:         #E23F20; // #b6503c;
+$color-background-light:  #f2d8c7;
 
-$color-black: #363636;
-$color-gray: #a8a7a8;
-
-$color-white: #F4F4F4;
-
-$color-green: #3eaca8;
-$color-red: #f05053;
-$color-yellow: #f6903d;
+$color-black:             #363636;
+$color-white:             #F4F4F4;
+$color-gray:              #a8a7a8;
+$color-green:             #3eaca8;
+$color-red:               #f05053;
+$color-yellow:            #f6903d;
 
 // Types
-$font-family-sans: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
-$font-size-base: 1rem;
+$font-family-sans:        "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+$font-size-base:          1rem;
 
 // Breakpoints
-$breakpoint--not-small: "screen and (min-width: 30em)";
-$breakpoint--medium: "screen and (min-width: 30em) and (max-width: 60em)";
-$breakpoint--large: "screen and (min-width: 60em)";
+$breakpoint--not-small:   "screen and (min-width: 30em)";
+$breakpoint--medium:      "screen and (min-width: 30em) and (max-width: 60em)";
+$breakpoint--large:       "screen and (min-width: 60em)";

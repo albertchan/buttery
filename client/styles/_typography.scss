@@ -1,6 +1,6 @@
 // var
-$type--color-text: $color-white;
-$type--color-link: $color-buttery;
+$type--color-text: $color-buttery-inverse;
+$type--color-link: $color-highlight;
 
 $type--ratio: 1.333;
 $type--base: $font-size-base; // 16px most browser default
@@ -44,8 +44,10 @@ body {
 // link
 a {
   color: $type--color-link;
-  transition: color .2s linear;
+  font-weight: 500;
   outline: 0;
+  transition: color .2s linear;
+  text-decoration: none;
 }
 a:visited {
   color: darken($type--color-link, 20%);
@@ -53,12 +55,18 @@ a:visited {
 a:focus,
 a:hover {
   opacity: .5;
+  text-decoration: none;
 }
 
 // headings
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
+
+// weights
+.fb { font-weight: 500; }
+.fr { font-weight: 400; }
+.fl { font-weight: 300; }
 
 /*
   TEXT ALIGN

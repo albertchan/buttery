@@ -1,11 +1,31 @@
 .by-movie-list_movie {
-  background-color: $color-black;
-  color: $color-white;
+  background-color: $color-buttery-inverse;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.19),
+              0 6px 10px rgba(0, 0, 0, 0.23);
+  color: $color-buttery;
   font-size: .75rem;
+
+  h4 {
+    margin: 0 0 0.2em
+  }
+
+  .flag_body {
+    padding: 1.5em 2em;
+  }
 }
 
 .by-movie-list_movie_thumb {
-  width: 8em;
+  width: 12em;
+}
+
+.by-movie-list_meta {
+  margin-bottom: 2em;
+  font-size: 0.75em;
+  font-weight: 300;
+
+  span {
+    margin-right: 0.5em;
+  }
 }
 
 @media #{$breakpoint--not-small} {

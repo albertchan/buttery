@@ -1,0 +1,50 @@
+// main header
+.by-header {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: $color-highlight;
+  font-size: 1em;
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    font-size: 1.75em;
+    text-transform: uppercase;
+  }
+
+  label {
+    color: $color-buttery-inverse;
+  }
+
+  a:visited {
+    color: $color-highlight;
+  }
+}
+
+.by-header button.by-dropdown_trigger {
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: 0;
+  font-weight: 500;
+  outline: none;
+
+  &:hover {
+    opacity: .5;
+  }
+}
+
+.by-header_left {
+  float: left;
+}
+
+.by-header_right {
+  float: right;
+}
+
+.by-header_row {
+  padding: 0.5em 0;
+  border-bottom: 1px solid lighten($color-buttery-inverse, 50%);
+}

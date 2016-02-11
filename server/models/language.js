@@ -4,7 +4,6 @@ module.exports = function(sequelize, DataTypes) {
     var Language = sequelize.define("Language", {
         id: {type: DataTypes.STRING(3), allowNull: false, primaryKey: true, unique: true},
         en_us: DataTypes.STRING,
-        zh_cn: DataTypes.STRING,
         zh_hk: DataTypes.STRING
     }, {
         classMethods: {

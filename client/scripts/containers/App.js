@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import { connect } from 'react-redux';
 import { pushState } from 'redux-router';
 import i18n from 'i18next';
-//import i18n from 'i18next-client';
 import { changeRegion, resetErrorMessage } from '../actions';
 import { fetchCinemasIfNeeded } from '../actions/cinemaActions';
 import { fetchMoviesIfNeeded } from '../actions/movieActions';
